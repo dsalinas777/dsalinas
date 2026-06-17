@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D Salinas | Gestor de Proyectos IT</title>
+    <title>D Salinas | En Mantenimiento</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,11 +25,11 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f0f9ff',  // Azul muy clarito
+                            50: '#f0f9ff',
                             100: '#e0f2fe',
-                            500: '#0ea5e9', // Azul claro principal (Sky blue)
-                            600: '#0284c7', // Azul interactivo (hover)
-                            900: '#0c4a6e', // Azul muy oscuro (casi negro)
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
                         }
                     }
                 }
@@ -41,373 +41,94 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
     </style>
 </head>
-<body class="text-gray-900 bg-gray-50">
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col relative overflow-hidden">
 
-    <!-- Navegación -->
-    <header class="fixed w-full z-50 glass-nav border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="https://dsalinas.com" class="font-bold text-2xl tracking-tight text-brand-900 hover:text-brand-600 transition-colors">
-                        D Salinas<span class="text-brand-500">.</span>
-                    </a>
-                </div>
-                
-                <!-- Menú Desktop -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#sobre-mi" class="text-gray-600 hover:text-brand-900 font-medium transition-colors">Sobre mí</a>
-                    <a href="#curso" class="text-gray-600 hover:text-brand-900 font-medium transition-colors">Cursos</a>
-                    <a href="#contenido" class="text-gray-600 hover:text-brand-900 font-medium transition-colors">Contenido</a>
-                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-[#0A66C2] transition-colors" title="LinkedIn">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#newsletter" class="bg-brand-900 text-white px-5 py-2.5 rounded-md font-medium hover:bg-brand-800 transition-all transform hover:scale-105 shadow-sm">
-                        Newsletter IT
-                    </a>
-                </nav>
+    <!-- Decoración de fondo suave -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-50 blur-3xl opacity-60 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-50 blur-3xl opacity-60 pointer-events-none"></div>
 
-                <!-- Botón Menú Móvil -->
-                <div class="md:hidden flex items-center gap-4">
-                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-[#0A66C2] transition-colors">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-900 focus:outline-none p-2">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Menú Móvil Desplegable -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-100 shadow-lg absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#sobre-mi" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-md">Sobre mí</a>
-                <a href="#curso" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-md">Cursos</a>
-                <a href="#contenido" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-md">Contenido</a>
-                <a href="#newsletter" class="block px-3 py-3 mt-4 text-center text-base font-medium bg-brand-900 text-white rounded-md">Suscribirse</a>
-            </div>
-        </div>
+    <!-- Cabecera simple -->
+    <header class="w-full py-8 relative z-10 text-center">
+        <a href="#" class="font-bold text-3xl tracking-tight text-brand-900 transition-colors inline-block">
+            D Salinas<span class="text-brand-500">.</span>
+        </a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-        <!-- Decoración de fondo suave -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-50 blur-3xl opacity-50 pointer-events-none"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
-                
-                <!-- Texto Hero -->
-                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left">
-                    <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-sm font-semibold mb-6 border border-brand-100">
-                        <i data-lucide="terminal" class="w-4 h-4 mr-2"></i>
-                        IT Manager | Consultoría Tecnológica | Gestión de Proyectos
-                    </div>
-                    <h1 class="text-4xl tracking-tight font-extrabold text-brand-900 sm:text-5xl md:text-6xl lg:leading-tight">
-                        Lidera la transformación digital y acelera tu <span class="text-brand-500">crecimiento empresarial.</span>
-                    </h1>
-                    <p class="mt-6 text-base text-gray-600 sm:text-lg md:mt-8 md:text-xl md:max-w-3xl">
-                        Actualizo la infraestructura tecnológica de tu organización y estandarizo tus operaciones para garantizar la continuidad del negocio con soluciones de alto impacto.
-                    </p>
-                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 flex flex-col sm:flex-row gap-4">
-                        
-                        <!-- Botón 1: Contrátame / Descargar CV -->
-                        <a href="assets/CV_DSalinas.pdf" download class="inline-flex flex-col justify-center items-center px-8 py-2.5 border border-transparent rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-lg hover:shadow-xl">
-                            <span class="text-base font-bold">Contrátame</span>
-                            <span class="text-xs font-medium text-brand-100 flex items-center mt-0.5">
-                                <i data-lucide="download" class="w-3 h-3 mr-1"></i> Descargar CV
-                            </span>
-                        </a>
-
-                        <!-- Botón 2: Fórmate conmigo -->
-                        <a href="#curso" class="inline-flex justify-center items-center px-8 py-4 border-2 border-gray-200 text-base font-bold rounded-md text-brand-900 bg-white hover:bg-gray-50 hover:border-gray-300 transition-all">
-                            Fórmate conmigo
-                        </a>
-
-                    </div>
-                </div>
-                
-                <!-- Imagen Hero -->
-                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-5 lg:flex lg:items-center">
-                    <div class="relative mx-auto w-full rounded-2xl shadow-2xl lg:max-w-md overflow-hidden aspect-[4/5] bg-gray-200 border-4 border-white">
-                        <!-- Imagen de Deivis (Ruta a carpeta local 'assets') -->
-                        <img class="w-full h-full object-cover object-center" src="assets/Gemini_Generated_Image_qoofetqoofetqoof.png" alt="Deivis Salinas">
-                    </div>
-                    <!-- Tarjeta flotante decorativa -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 hidden md:flex items-center gap-4">
-                        <div class="bg-green-100 p-2 rounded-full">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-gray-900">Certificación PMP</p>
-                            <p class="text-xs text-gray-500">Preparación oficial</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="py-24 bg-gray-50 border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Contenido Principal -->
+    <main class="flex-grow flex items-center justify-center relative z-10 px-4 sm:px-6 py-12">
+        <div class="max-w-2xl w-full text-center">
             
-            <!-- Cabecera de la Sección -->
-            <div class="text-center mb-16 max-w-4xl mx-auto">
-                <h2 class="text-3xl font-extrabold text-brand-900 sm:text-4xl mb-4">
-                    Detrás de la estrategia: Tecnología, Gestión y Educación.
-                </h2>
-                <p class="text-xl text-gray-600 italic">
-                    Un perfil híbrido diseñado para aportar soluciones reales a empresas y profesionales.
-                </p>
+            <!-- Imagen circular -->
+            <div class="relative inline-block mb-8">
+                <div class="absolute inset-0 bg-brand-500 rounded-full blur opacity-20 transform scale-110"></div>
+                <img src="assets/Gemini_Generated_Image_qoofetqoofetqoof.png" alt="Deivis Salinas" class="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover object-center border-4 border-white shadow-xl mx-auto">
             </div>
 
-            <!-- Cuerpo Principal: 3 Columnas -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Textos -->
+            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-yellow-50 text-yellow-700 text-sm font-semibold mb-6 border border-yellow-200">
+                <i data-lucide="settings" class="w-4 h-4 mr-2 animate-spin-slow"></i>
+                Sitio web en actualización
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-brand-900 tracking-tight mb-4">
+                Preparando algo <span class="text-brand-500">increíble.</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-xl mx-auto">
+                Estoy mejorando mi plataforma para ofrecerte una mejor experiencia. Mientras tanto, puedes revisar mi trayectoria o contactarme directamente.
+            </p>
+
+            <!-- Botones principales (CV y WhatsApp) -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <!-- Botón CV -->
+                <a href="assets/CV_DSalinas.pdf" download class="inline-flex justify-center items-center px-8 py-4 border border-transparent rounded-md text-white bg-brand-900 hover:bg-brand-800 transition-all shadow-md hover:shadow-lg font-bold text-lg">
+                    <i data-lucide="download" class="w-5 h-5 mr-2"></i> Descargar CV
+                </a>
                 
-                <!-- COLUMNA 1 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-brand-900 mb-5 pb-4 border-b border-gray-100">
-                        <span class="text-brand-500 font-black mr-2">01 /</span> Sólida Base Tecnológica e Ingeniería
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed flex-grow">
-                        Mi camino comenzó en los fundamentos más puros de la tecnología. Me formé con grandes de la industria como IBM, desarrollándome como Ingeniero Informático. Consolidé mi experiencia desde la base operativa, trabajando en mi primera etapa en roles de programación, helpdesk, administración de redes y administración de sistemas. Esta trayectoria me otorgó el conocimiento y la experiencia de cómo la tecnología nos ayuda a crecer. Esta sólida experiencia técnica es la que hoy me permite hablar el mismo idioma que los equipos de desarrollo e infraestructura, asegurando soluciones viables, seguras y escalables desde la raíz.
-                    </p>
-                </div>
-
-                <!-- COLUMNA 2 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden">
-                    <!-- Detalle de color en el borde superior para destacar la columna central -->
-                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
-                    
-                    <h3 class="text-xl font-bold text-brand-900 mb-5 pb-4 border-b border-gray-100 mt-2">
-                        <span class="text-brand-500 font-black mr-2">02 /</span> Liderazgo Estratégico y Dirección
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed flex-grow">
-                        Más allá del código y los servidores, el verdadero valor surge cuando la tecnología se alinea con los objetivos del negocio. Desde el año 2018, me dedico exclusivamente a roles de gestión, liderando proyectos de alto impacto que transforman organizaciones. Mi enfoque se centra en la dirección de proyectos complejos de infraestructura tecnológica, soluciones tecnológicas, Big Data, Cloud Computing, IoT, soluciones digitales y ahora Inteligencia Artificial (IA). Mi propósito es liderar equipos multidisciplinares bajo marcos globales, optimizar operaciones y aportar el valor estratégico necesario para blindar la continuidad y el crecimiento empresarial.
-                    </p>
-                </div>
-
-                <!-- COLUMNA 3 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-brand-900 mb-5 pb-4 border-b border-gray-100">
-                        <span class="text-brand-500 font-black mr-2">03 /</span> Liderazgo, Gestión de Equipos y Formador
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed flex-grow">
-                        La tecnología impulsa el cambio, pero las personas lo hacen posible. Desde el año 2012, dedico parte de mi tiempo a la formación y al coaching de crecimiento personal y desarrollo humano. Esta vocación me llevó a desempeñarme durante un par de años como profesor universitario, impartiendo múltiples materias. A través de las clases, las formaciones, el coaching y programas formativos actuales, combino esta experiencia docente con mi día a día corporativo. Creo firmemente en el concepto de la humanización de la tecnología.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Cierre y Llamada a la Acción (Redirige a roadmap.html) -->
-            <div class="text-center mt-12">
-                <a href="roadmap.html" class="inline-flex justify-center items-center px-10 py-4 border border-transparent text-lg font-bold rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                    ¿Quieres conocer toda mi trayectoria? Pulsa aquí
-                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                <!-- Botón WhatsApp -->
+                <a href="https://wa.me/34686243003" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-8 py-4 border-2 border-green-500 rounded-md text-green-700 bg-green-50 hover:bg-green-100 hover:border-green-600 transition-all font-bold text-lg">
+                    <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> WhatsApp
                 </a>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Sección Curso Principal -->
-    <section id="curso" class="py-24 bg-brand-900 relative overflow-hidden">
-        <!-- Decoración -->
-        <div class="absolute inset-0 opacity-10">
-            <svg class="h-full w-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <pattern id="grid-pattern-course" width="8" height="8" patternUnits="userSpaceOnUse">
-                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" stroke-width="0.5"/>
-                </pattern>
-                <rect width="100" height="100" fill="url(#grid-pattern-course)"/>
-            </svg>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden lg:flex">
+            <!-- Formulario de Contacto (Mailto) -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 max-w-lg mx-auto text-left">
+                <h3 class="text-lg font-bold text-brand-900 mb-2 flex items-center">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2 text-brand-500"></i> ¿Prefieres enviarme un correo?
+                </h3>
+                <p class="text-gray-500 text-sm mb-6">Déjame tu mensaje y te responderé lo antes posible a <strong>me@dsalinas.com</strong>.</p>
                 
-                <!-- Imagen/Visual del curso -->
-                <div class="lg:w-2/5 bg-gray-100 relative">
-                    <!-- Imagen enlazada desde Unsplash para el curso -->
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="[Image of Persona estudiando]" class="w-full h-64 lg:h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
-                        <span class="bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-md w-max mb-3 uppercase tracking-wide">Programa Destacado</span>
-                        <h4 class="text-white font-bold text-2xl">Certificación PMI</h4>
+                <!-- 
+                  Nota técnica: Al ser HTML estático, usamos 'mailto:'. 
+                  Al hacer clic en enviar, se abrirá el gestor de correo del usuario (Outlook, Gmail, Apple Mail) 
+                  con los datos pre-rellenados.
+                -->
+                <form action="mailto:me@dsalinas.com" method="GET" enctype="text/plain" class="space-y-4">
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Asunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="Motivo de tu contacto" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-colors">
                     </div>
-                </div>
-
-                <!-- Detalles del curso -->
-                <div class="lg:w-3/5 p-8 md:p-12">
-                    <h3 class="text-3xl font-extrabold text-brand-900 mb-4">
-                        Curso de Preparación Oficial para la Certificación PMP
-                    </h3>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Un programa integral de 32 horas de clase con modelos de exámenes, prácticas reales, cuestionarios, infografías y un sistema de repaso espaciado.
-                    </p>
-
-                    <div class="space-y-6 mb-10">
-                        <!-- Beneficio 1 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <i data-lucide="award" class="w-6 h-6 text-brand-500"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h5 class="text-lg font-bold text-gray-900">Certificación Oficial</h5>
-                                <p class="mt-1 text-gray-600">Todo lo necesario para certificarte con éxito en el PMI como Project Manager Professional.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Beneficio 2 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <i data-lucide="clock" class="w-6 h-6 text-brand-500"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h5 class="text-lg font-bold text-gray-900">Aprendizaje Asimilable</h5>
-                                <p class="mt-1 text-gray-600">Estructurado en 32 módulos de 30 minutos, diseñados en pequeñas fracciones para facilitar la comprensión de cada concepto.</p>
-                            </div>
-                        </div>
-
-                        <!-- Beneficio 3 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <i data-lucide="brain-circuit" class="w-6 h-6 text-brand-500"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h5 class="text-lg font-bold text-gray-900">Retención Garantizada</h5>
-                                <p class="mt-1 text-gray-600">Incluye cuestionarios por módulo y un sistema de Anki Flashcards para que puedas practicar y repasar a diario desde tu móvil, tablet u ordenador.</p>
-                            </div>
-                        </div>
+                    <div>
+                        <label for="body" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                        <textarea id="body" name="body" rows="3" placeholder="Escribe tu mensaje aquí..." required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-colors resize-none"></textarea>
                     </div>
-
-                    <a href="#" class="inline-block w-full md:w-auto text-center px-8 py-4 border border-transparent text-lg font-bold rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-md hover:shadow-lg">
-                        Inscríbete en el curso
-                    </a>
-                </div>
+                    <button type="submit" class="w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-bold rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm">
+                        Enviar mensaje por Email
+                    </button>
+                </form>
             </div>
+
         </div>
-    </section>
+    </main>
 
-    <!-- Sección Contenido (Placeholder / Relleno) -->
-    <section id="contenido" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-2">Recursos Gratuitos</h2>
-            <h3 class="text-3xl font-extrabold text-brand-900 sm:text-4xl mb-8">
-                Contenido y Blog
-            </h3>
-            <div class="bg-gray-50 border-2 border-gray-200 border-dashed rounded-2xl p-12 text-gray-500 max-w-3xl mx-auto">
-                <i data-lucide="layout-template" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
-                <p class="text-lg">Aquí irá la sección de contenido con tus artículos, vídeos de YouTube o recursos descargables.</p>
-                <p class="text-sm mt-2 text-gray-400">(Bloque de relleno temporal)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter CTA -->
-    <section id="newsletter" class="bg-gray-100 py-24 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center justify-center p-3 bg-brand-100 rounded-full mb-6">
-                <i data-lucide="mail-open" class="w-8 h-8 text-brand-600"></i>
-            </div>
-            <h2 class="text-3xl font-extrabold text-brand-900 sm:text-4xl">
-                ¿Quieres estar actualizado sobre el mundo IT y la gestión de proyectos?
-            </h2>
-            <p class="mt-6 text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Únete a nuestra comunidad. Cada domingo te enviaremos las últimas novedades sobre <strong>ITIL, nuevas normativas, Inteligencia Artificial</strong> y las mejores prácticas en gestión de proyectos.
-            </p>
-            
-            <form class="sm:flex max-w-xl mx-auto bg-white p-2 rounded-lg shadow-md" onsubmit="event.preventDefault(); alert('Aquí irá la conexión con tu herramienta de Newsletter (Mailchimp, ActiveCampaign, etc.)');">
-                <label for="email-address" class="sr-only">Tu correo electrónico</label>
-                <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-4 border-none focus:ring-0 sm:max-w-xs text-gray-900 bg-transparent placeholder-gray-400" placeholder="tu@email.com">
-                <button type="submit" class="mt-3 w-full sm:mt-0 sm:w-auto flex-shrink-0 flex items-center justify-center px-6 py-4 border border-transparent text-base font-medium rounded-md text-white bg-brand-900 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
-                    Suscríbete todos los domingos
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-900 text-white pt-16 pb-8 border-t border-brand-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <!-- Info Footer -->
-                <div>
-                    <h3 class="text-2xl font-bold text-white tracking-tight mb-4">
-                        D Salinas<span class="text-brand-500">.</span>
-                    </h3>
-                    <p class="text-brand-100 text-lg max-w-sm">
-                        ¿Quieres que te ayude a dar el siguiente paso en tu carrera IT? Hablemos.
-                    </p>
-                    
-                    <div class="mt-8 space-y-4">
-                        <a href="tel:+34686243003" class="flex items-center text-brand-100 hover:text-white transition-colors">
-                            <i data-lucide="smartphone" class="w-5 h-5 mr-3 text-brand-500"></i>
-                            +34 686 24 30 03
-                        </a>
-                        <a href="mailto:Salinasdeivis@gmail.com" class="flex items-center text-brand-100 hover:text-white transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-brand-500"></i>
-                            Salinasdeivis@gmail.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Links y Redes -->
-                <div class="md:text-right">
-                    <h4 class="text-lg font-semibold mb-6">Conecta conmigo</h4>
-                    <a href="https://linkedin.com" target="_blank" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-800 text-brand-100 hover:bg-[#0A66C2] hover:text-white transition-all">
-                        <span class="sr-only">LinkedIn</span>
-                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-200">
-                <p>&copy; 2024 Deivis Alexander Salinas Paniagua. Todos los derechos reservados.</p>
-                <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
-                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-                </div>
-            </div>
-        </div>
+    <!-- Pie de página simple -->
+    <footer class="w-full py-6 text-center text-sm text-gray-500 relative z-10">
+        <p>&copy; 2024 Deivis Alexander Salinas Paniagua. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Inicializar iconos
         lucide.createIcons();
-
-        // Lógica del menú móvil
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Cerrar menú móvil al hacer click en un enlace
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Efecto del Navbar al hacer scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-sm');
-            } else {
-                navbar.classList.remove('shadow-sm');
-            }
-        });
     </script>
 </body>
 </html>
