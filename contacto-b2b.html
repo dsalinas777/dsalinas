@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Corporativo B2B | D Salinas Management</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon_oficial.ico" type="image/x-icon">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporativo: '#0C4A6E',
+                        interactivo: '#0284C7',
+                        acento: '#0EA5E9',
+                        fondoclaro: '#F0F9FF',
+                        textobase: '#1F2937'
+                    },
+                    fontFamily: {
+                        zilla: ['"Zilla Slab"', 'serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: #1F2937; }
+        h1, h2, h3, h4, .font-zilla { font-family: '"Zilla Slab"', serif; }
+        
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        
+        /* Efecto de fondo sutil */
+        .bg-pattern {
+            background-image: radial-gradient(#0EA5E9 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+        }
+
+        /* Modal Transitions */
+        .modal-active { display: flex !important; animation: fadeIn 0.3s ease-out forwards; }
+        .modal-inactive { display: none !important; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col">
+
+    <!-- Navbar (Simplificada) -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer transition-transform hover:scale-105">
+                    <img class="h-10 w-auto md:hidden" src="assets/isotipo_oficial.png" alt="D Salinas Isotipo">
+                    <img class="h-12 w-auto hidden md:block" src="assets/logotipo.png" alt="D Salinas Logotipo">
+                </a>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="index.html" class="hidden sm:flex items-center text-textobase hover:text-interactivo font-medium transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="nav_back">Volver al Inicio</span>
+                    </a>
+                    
+                    <!-- Selector de Idioma -->
+                    <div class="flex items-center space-x-2 bg-fondoclaro px-3 py-1 rounded-full border border-gray-200">
+                        <button onclick="changeLanguage('es')" id="btn-es" class="text-sm font-bold text-corporativo focus:outline-none">ES</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center relative pt-24 pb-12">
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Columna Izquierda: Mensaje Persuasivo B2B -->
+                <div class="w-full lg:w-5/12 text-center lg:text-left">
+                    <div class="inline-flex items-center justify-center bg-fondoclaro text-interactivo px-4 py-2 rounded-full font-semibold text-sm border border-blue-100 tracking-wide uppercase mb-6 shadow-sm">
+                        <i class="fas fa-building mr-2 text-acento"></i> <span data-i18n="hero_tag">Soluciones Corporativas</span>
+                    </div>
+                    
+                    <h1 class="text-4xl lg:text-5xl font-zilla font-bold text-corporativo mb-6 leading-tight" data-i18n="hero_title">
+                        Escala la infraestructura y el talento IT de tu empresa.
+                    </h1>
+                    
+                    <p class="text-lg text-gray-600 mb-10 leading-relaxed" data-i18n="hero_desc">
+                        Impulsa la transformación digital de tu negocio con consultoría experta y formación in-company. Diseñamos estrategias tecnológicas alineadas con tus objetivos de rentabilidad y eficiencia.
+                    </p>
+                    
+                    <!-- Bloque de Conexión B2B -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-left">
+                        <h2 class="text-2xl font-zilla font-bold text-corporativo mb-4" data-i18n="method_title">
+                            De un IT Manager a tu Junta Directiva.
+                        </h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed text-sm" data-i18n="method_desc1">
+                            No ofrezco teoría enlatada. Aporto más de 15 años de experiencia real liderando departamentos técnicos, gestionando presupuestos y auditando infraestructuras críticas en entornos corporativos.
+                        </p>
+                        <p class="text-textobase leading-relaxed font-semibold text-sm" data-i18n="method_desc2">
+                            Ya sea que necesites alinear tu equipo con ITIL, auditar bajo ISO 27001 o liderar un despliegue complejo, tendrás un socio estratégico que entiende el lenguaje del negocio.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario de Contacto B2B -->
+                <div class="w-full lg:w-7/12">
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sm:p-10 relative overflow-hidden">
+                        
+                        <!-- Línea decorativa superior -->
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-corporativo via-interactivo to-acento"></div>
+
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-zilla font-bold text-corporativo" data-i18n="form_title">Solicita una sesión estratégica sin compromiso.</h3>
+                            <p class="text-gray-500 text-sm mt-3 leading-relaxed" data-i18n="form_subtitle">Déjanos tus datos corporativos. Analizaremos tu caso y te propondremos una hoja de ruta clara para tu organización.</p>
+                        </div>
+
+                        <form id="leadForm" onsubmit="handleFormSubmit(event)">
+                            <div class="space-y-5 mb-8">
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <!-- Nombre Completo -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="form_name">Tu Nombre *</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                                <i class="far fa-user"></i>
+                                            </div>
+                                            <input type="text" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow bg-gray-50 focus:bg-white" placeholder="Ej. Carlos Mendoza">
+                                        </div>
+                                    </div>
+
+                                    <!-- Cargo -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="form_role">Cargo / Posición *</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                                <i class="fas fa-id-badge"></i>
+                                            </div>
+                                            <input type="text" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow bg-gray-50 focus:bg-white" placeholder="Ej. Director de IT">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <!-- Empresa -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="form_company">Nombre de la Empresa *</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                                <i class="far fa-building"></i>
+                                            </div>
+                                            <input type="text" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow bg-gray-50 focus:bg-white" placeholder="Ej. TechCorp SL">
+                                        </div>
+                                    </div>
+
+                                    <!-- Email Corporativo -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="form_email">Email Corporativo *</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                                <i class="far fa-envelope"></i>
+                                            </div>
+                                            <input type="email" required class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow bg-gray-50 focus:bg-white" placeholder="correo@empresa.com">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Selector de Servicio -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="form_service">¿Qué solución tecnológica necesitas? *</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                                            <i class="fas fa-network-wired text-sm"></i>
+                                        </div>
+                                        <select required class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow bg-gray-50 focus:bg-white appearance-none cursor-pointer text-gray-700">
+                                            <option value="" disabled selected data-i18n="form_service_opt0">Selecciona un área de enfoque...</option>
+                                            <option value="consultoria" data-i18n="form_service_opt1">Consultoría IT y Transformación Digital</option>
+                                            <option value="formacion" data-i18n="form_service_opt2">Formación In-Company (Certificaciones)</option>
+                                            <option value="iso" data-i18n="form_service_opt3">Auditoría e Implementación ISO</option>
+                                            <option value="pmo" data-i18n="form_service_opt4">Gestión de Proyectos (PMO)</option>
+                                        </select>
+                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500">
+                                            <i class="fas fa-chevron-down text-sm"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón Enviar CTA -->
+                            <button type="submit" class="w-full flex items-center justify-center bg-corporativo hover:bg-interactivo text-white font-bold py-4 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+                                <span data-i18n="form_submit">Solicitar Asesoramiento</span>
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </button>
+
+                            <!-- Microcopy: Beneficios B2B -->
+                            <div class="mt-6 space-y-3 text-sm text-gray-600 bg-fondoclaro p-4 rounded-xl border border-blue-100 text-left">
+                                <div class="flex items-start">
+                                    <span class="mr-3 text-lg text-acento"><i class="fas fa-search"></i></span>
+                                    <span data-i18n="ben_1"><strong>Análisis Inicial:</strong> Evaluamos el estado actual de tu infraestructura o equipo sin coste.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-3 text-lg text-acento"><i class="fas fa-stopwatch"></i></span>
+                                    <span data-i18n="ben_2"><strong>Respuesta Rápida:</strong> Un consultor experto te contactará en menos de 24 horas laborables.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-3 text-lg text-acento"><i class="fas fa-handshake"></i></span>
+                                    <span data-i18n="ben_3"><strong>Planes a Medida:</strong> Propuestas escalables adaptadas al tamaño y presupuesto de tu empresa.</span>
+                                </div>
+                            </div>
+
+                            <p class="text-xs text-center text-gray-400 mt-6" data-i18n="form_privacy">
+                                Al enviar este formulario, aceptas nuestra <a href="politica-privacidad.html" class="underline hover:text-interactivo">Política de Privacidad</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div id="successModal" class="fixed inset-0 z-[100] modal-inactive items-center justify-center bg-gray-900 bg-opacity-50 backdrop-blur-sm px-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center border-t-4 border-interactivo relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check-circle text-4xl text-interactivo"></i>
+            </div>
+            
+            <h3 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="modal_title">¡Solicitud Recibida!</h3>
+            <p class="text-gray-600 mb-8" data-i18n="modal_desc">
+                Gracias por tu interés. Hemos recibido los datos de tu empresa correctamente. Un consultor se pondrá en contacto contigo en las próximas 24 horas laborables.
+            </p>
+            
+            <button onclick="returnToHome()" class="w-full bg-corporativo hover:bg-interactivo text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-md" data-i18n="modal_btn">
+                Volver a la página principal
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-2">
+                <img src="assets/isotipo_oficial.png" alt="Logo" class="h-5 w-auto grayscale opacity-60">
+                <span class="text-sm text-gray-500">© 2026 D Salinas. <span data-i18n="footer_rights">Todos los derechos reservados.</span></span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-500">
+                <a href="terminos-condiciones.html" class="hover:text-corporativo" data-i18n="footer_terms">Términos y Condiciones</a>
+                <a href="politica-privacidad.html" class="hover:text-corporativo" data-i18n="footer_privacy">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Diccionario Dinámico de Idiomas (ES/EN) adaptado para B2B
+        const dictionary = {
+            es: {
+                nav_back: "Volver al Inicio",
+                hero_tag: "Soluciones Corporativas",
+                hero_title: "Escala la infraestructura y el talento IT de tu empresa.",
+                hero_desc: "Impulsa la transformación digital de tu negocio con consultoría experta y formación in-company. Diseñamos estrategias tecnológicas alineadas con tus objetivos de rentabilidad y eficiencia.",
+                method_title: "De un IT Manager a tu Junta Directiva.",
+                method_desc1: "No ofrezco teoría enlatada. Aporto más de 15 años de experiencia real liderando departamentos técnicos, gestionando presupuestos y auditando infraestructuras críticas en entornos corporativos.",
+                method_desc2: "Ya sea que necesites alinear tu equipo con ITIL, auditar bajo ISO 27001 o liderar un despliegue complejo, tendrás un socio estratégico que entiende el lenguaje del negocio.",
+                form_title: "Solicita una sesión estratégica sin compromiso.",
+                form_subtitle: "Déjanos tus datos corporativos. Analizaremos tu caso y te propondremos una hoja de ruta clara para tu organización.",
+                form_name: "Tu Nombre *",
+                form_role: "Cargo / Posición *",
+                form_company: "Nombre de la Empresa *",
+                form_email: "Email Corporativo *",
+                form_service: "¿Qué solución tecnológica necesitas? *",
+                form_service_opt0: "Selecciona un área de enfoque...",
+                form_service_opt1: "Consultoría IT y Transformación Digital",
+                form_service_opt2: "Formación In-Company (Certificaciones)",
+                form_service_opt3: "Auditoría e Implementación ISO",
+                form_service_opt4: "Gestión de Proyectos (PMO)",
+                form_submit: "Solicitar Asesoramiento",
+                ben_1: "<strong>Análisis Inicial:</strong> Evaluamos el estado actual de tu infraestructura o equipo sin coste.",
+                ben_2: "<strong>Respuesta Rápida:</strong> Un consultor experto te contactará en menos de 24 horas laborables.",
+                ben_3: "<strong>Planes a Medida:</strong> Propuestas escalables adaptadas al tamaño y presupuesto de tu empresa.",
+                form_privacy: "Al enviar este formulario, aceptas nuestra <a href='politica-privacidad.html' class='underline hover:text-interactivo'>Política de Privacidad</a>.",
+                modal_title: "¡Solicitud Recibida!",
+                modal_desc: "Gracias por tu interés. Hemos recibido los datos de tu empresa correctamente. Un consultor se pondrá en contacto contigo en las próximas 24 horas laborables.",
+                modal_btn: "Volver a la página principal",
+                footer_rights: "Todos los derechos reservados.",
+                footer_terms: "Términos y Condiciones",
+                footer_privacy: "Política de Privacidad"
+            },
+            en: {
+                nav_back: "Back to Home",
+                hero_tag: "Corporate Solutions",
+                hero_title: "Scale your company's IT infrastructure and talent.",
+                hero_desc: "Drive your business's digital transformation with expert consulting and in-company training. We design technology strategies aligned with your profitability and efficiency goals.",
+                method_title: "From an IT Manager to your Boardroom.",
+                method_desc1: "I don't offer canned theory. I bring over 15 years of real-world experience leading technical departments, managing budgets, and auditing critical infrastructures in corporate environments.",
+                method_desc2: "Whether you need to align your team with ITIL, audit under ISO 27001, or lead a complex deployment, you'll have a strategic partner who speaks the language of business.",
+                form_title: "Request a no-obligation strategic session.",
+                form_subtitle: "Leave us your corporate details. We will analyze your case and propose a clear roadmap for your organization.",
+                form_name: "Your Name *",
+                form_role: "Job Title / Role *",
+                form_company: "Company Name *",
+                form_email: "Corporate Email *",
+                form_service: "Which technology solution do you need? *",
+                form_service_opt0: "Select a focus area...",
+                form_service_opt1: "IT Consulting & Digital Transformation",
+                form_service_opt2: "In-Company Training (Certifications)",
+                form_service_opt3: "ISO Auditing & Implementation",
+                form_service_opt4: "Project Management (PMO)",
+                form_submit: "Request Consultation",
+                ben_1: "<strong>Initial Analysis:</strong> We evaluate the current state of your infrastructure or team at no cost.",
+                ben_2: "<strong>Rapid Response:</strong> An expert consultant will contact you in less than 24 business hours.",
+                ben_3: "<strong>Tailored Plans:</strong> Scalable proposals adapted to your company's size and budget.",
+                form_privacy: "By submitting this form, you accept our <a href='politica-privacidad.html' class='underline hover:text-interactivo'>Privacy Policy</a>.",
+                modal_title: "Request Received!",
+                modal_desc: "Thank you for your interest. We have successfully received your company's details. An expert consultant will contact you within the next 24 business hours.",
+                modal_btn: "Return to homepage",
+                footer_rights: "All rights reserved.",
+                footer_terms: "Terms & Conditions",
+                footer_privacy: "Privacy Policy"
+            }
+        };
+
+        // 2. Función de cambio de idioma
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (dictionary[lang][key]) {
+                    element.innerHTML = dictionary[lang][key];
+                }
+            });
+
+            // Actualizar placeholders en los inputs para B2B
+            const inputs = document.querySelectorAll('input');
+            if (lang === 'en') {
+                inputs[0].placeholder = "E.g. Charles Smith";
+                inputs[1].placeholder = "E.g. CTO";
+                inputs[2].placeholder = "E.g. TechCorp LLC";
+                inputs[3].placeholder = "email@company.com";
+            } else {
+                inputs[0].placeholder = "Ej. Carlos Mendoza";
+                inputs[1].placeholder = "Ej. Director de IT";
+                inputs[2].placeholder = "Ej. TechCorp SL";
+                inputs[3].placeholder = "correo@empresa.com";
+            }
+
+            // Estilos de botones de idioma
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'es') {
+                btnEs.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEn.className = "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+            } else {
+                btnEn.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEs.className = "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+            }
+        }
+
+        // 3. Control del Formulario y Modal
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Procesando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const modal = document.getElementById('successModal');
+                modal.classList.remove('modal-inactive');
+                modal.classList.add('modal-active');
+                
+                event.target.reset();
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }, 800);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('modal-active');
+            modal.classList.add('modal-inactive');
+        }
+
+        function returnToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

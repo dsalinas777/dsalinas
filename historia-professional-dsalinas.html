@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">Deivis Salinas | Trayectoria y Enfoque en IT Management</title>
+    <meta name="description" id="meta-desc" content="Explora la línea de tiempo profesional de Deivis Salinas: experto en Transformación Digital, consultoría tecnológica, gestión ágil y dirección IT.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon_oficial.ico" type="image/x-icon">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporativo: '#0C4A6E',
+                        interactivo: '#0284C7',
+                        acento: '#0EA5E9',
+                        fondoclaro: '#F0F9FF',
+                        textobase: '#1F2937'
+                    },
+                    fontFamily: {
+                        zilla: ['"Zilla Slab"', 'serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: #1F2937; overflow-x: hidden; }
+        h1, h2, h3, h4, .font-zilla { font-family: '"Zilla Slab"', serif; }
+        
+        /* Navbar Glass (Light) */
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        
+        /* ======= TIMELINE CORPORATIVO ======= */
+        .timeline-container { position: relative; width: 100%; max-w: 1000px; margin: 0 auto; padding: 40px 0; }
+        
+        /* Línea Central (Fondo gris claro) */
+        .timeline-container::after {
+            content: ''; position: absolute; width: 2px; background-color: #E5E7EB;
+            top: 0; bottom: 0; left: 24px; margin-left: -1px; z-index: 1;
+        }
+
+        /* Línea de Progreso Activa */
+        .timeline-progress {
+            position: absolute; width: 2px; background-color: #0284C7;
+            top: 0; height: 0%; left: 24px; margin-left: -1px; z-index: 2;
+            transition: height 0.5s ease-out;
+        }
+
+        .timeline-item { position: relative; width: 100%; padding-left: 60px; padding-right: 20px; margin-bottom: 60px; z-index: 10; }
+        
+        /* Nodos Corporativos */
+        .timeline-node {
+            position: absolute; width: 36px; height: 36px; right: auto; left: 6px; top: 0;
+            background-color: #ffffff; border: 3px solid #E5E7EB; border-radius: 50%; z-index: 10;
+            display: flex; justify-content: center; align-items: center; color: #9CA3AF;
+            transition: all 0.5s ease-out; font-size: 0.9rem;
+        }
+        
+        /* Tarjetas Blancas Ejecutivas */
+        .timeline-card {
+            background: #ffffff; border: 1px solid #F3F4F6; border-radius: 12px;
+            padding: 32px; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(30px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animaciones al hacer Scroll */
+        .timeline-item.active .timeline-node { border-color: #0284C7; color: #0284C7; box-shadow: 0 0 0 4px #F0F9FF; }
+        .timeline-item.active .timeline-card { opacity: 1; transform: translateY(0); }
+        .timeline-item.active .timeline-card:hover { box-shadow: 0 10px 25px -5px rgba(12, 74, 110, 0.1); border-color: #E0F2FE; }
+
+        /* Media Queries Desktop (Zig-Zag) */
+        @media screen and (min-width: 768px) {
+            .timeline-container::after { left: 50%; }
+            .timeline-progress { left: 50%; }
+            
+            .timeline-item { width: 50%; padding-left: 0; padding-right: 40px; }
+            .timeline-item:nth-child(even) { left: 50%; padding-left: 40px; padding-right: 0; }
+            
+            /* Nodos al centro */
+            .timeline-node { left: auto; right: -18px; }
+            .timeline-item:nth-child(even) .timeline-node { left: -18px; right: auto; }
+            
+            /* Animación de entrada alternada */
+            .timeline-card { transform: translateX(-30px); }
+            .timeline-item:nth-child(even) .timeline-card { transform: translateX(30px); }
+            .timeline-item.active .timeline-card { transform: translateX(0); }
+        }
+
+        /* Utilidades de listas corporativas */
+        .achiev-list { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .achiev-list li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; color: #4B5563; font-size: 0.95rem; line-height: 1.6; }
+        .achiev-list li::before { 
+            content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; 
+            position: absolute; left: 0; top: 2px; color: #0EA5E9; font-size: 1rem; 
+        }
+        .achiev-list strong { color: #1F2937; }
+        
+        .sub-header { color: #0C4A6E; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; border-bottom: 1px solid #F3F4F6; padding-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer transition-transform hover:scale-105">
+                    <img class="h-10 w-auto md:hidden" src="assets/isotipo_oficial.png" alt="D Salinas Isotipo">
+                    <img class="h-12 w-auto hidden md:block" src="assets/logotipo.png" alt="D Salinas Logotipo">
+                </a>
+                
+                <div class="flex items-center space-x-6">
+                    <!-- Botón Volver -->
+                    <a href="index.html" class="hidden sm:flex items-center text-textobase hover:text-interactivo font-medium transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="nav_back">Volver al Inicio</span>
+                    </a>
+                    
+                    <!-- Selector de Idioma -->
+                    <div class="flex items-center space-x-2 bg-fondoclaro px-3 py-1 rounded-full border border-gray-200">
+                        <button onclick="changeLanguage('es')" id="btn-es" class="text-sm font-bold text-corporativo focus:outline-none">ES</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        
+        <!-- Cabecera de la página -->
+        <div class="text-center mb-20">
+            <h1 class="text-4xl md:text-5xl font-zilla font-bold text-corporativo mb-4" data-i18n="hero_title">
+                Trayectoria Profesional
+            </h1>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg" data-i18n="hero_desc">
+                Historial cronológico ejecutivo. Liderazgo, innovación tecnológica y gestión de infraestructuras críticas corporativas.
+            </p>
+            <div class="w-24 h-1 bg-acento mx-auto mt-8 rounded-full"></div>
+            
+            <!-- Botón móvil para volver -->
+            <a href="index.html" class="sm:hidden mt-8 inline-flex items-center text-interactivo bg-fondoclaro px-4 py-2 rounded-lg font-medium border border-blue-100">
+                <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="nav_back">Volver al Inicio</span>
+            </a>
+        </div>
+
+        <div class="timeline-container relative" id="timeline">
+            <!-- La barra de progreso -->
+            <div class="timeline-progress" id="progress-bar"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-building"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t1_title">Ferrer | Responsable de TI</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t1_period">Mayo de 2024 - Presente</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t1_loc">Sant Cugat del Vallès, Cataluña, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t1_strategy">Dirección y liderazgo técnico en un entorno industrial altamente regulado, asumiendo la gestión integral de proyectos y servicios tecnológicos tanto en el área de IT (Information Technology) como en OT (Operational Technology). El objetivo central se enfoca en asegurar la continuidad operativa de las plantas de producción, la evolución de sus infraestructuras críticas y la alineación directa con los objetivos estratégicos del negocio.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t1_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Dirección de proyectos de infraestructura:</strong> Lideré la renovación tecnológica de redes, virtualización avanzada de servidores y la gestión operativa de entornos híbridos on-premise y cloud.</li>
+                            <li><strong>Coordinación de equipos y servicios gestionados:</strong> Coordiné un equipo técnico compuesto por 3 técnicos de soporte y proveedores externos, supervisando servicios en plataformas como Microsoft 365, Intune, Azure, redes Cisco y seguridad Palo Alto.</li>
+                            <li><strong>Administración de infraestructura crítica:</strong> Asumí el control técnico de un parque compuesto por 85 switches Cisco (campo y core Nexus), 2 controladoras WiFi (WLC), 15 hosts físicos (ESX y Dell) con más de 150 máquinas virtuales, sistemas de backup IBM TS4300 e infraestructuras de seguridad corporativa.</li>
+                            <li><strong>Ciberseguridad y operaciones de red:</strong> Gestioné el ecosistema de seguridad bajo un enfoque SASE mediante Netskope, coordinándome con el NOC (Network Operations Center) para la supervisión y resolución proactiva de incidencias críticas en infraestructura y comunicaciones.</li>
+                            <li><strong>Integración en entornos industriales y de laboratorio:</strong> Supervisé el correcto funcionamiento de workplaces (1.000 dispositivos), sistemas OT (AGV para inventario y líneas de producción Zetes & Marchesini) y plataformas de software especializado de laboratorio (OpenLab, Empower, LIMS, LabVantage).</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t1_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t2_title">SEIDOR | Consultor de Soporte de TI</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t2_period">Marzo de 2023 - Mayo de 2024</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t2_loc">Sant Cugat del Vallès, Cataluña, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t2_strategy">Desempeño como Consultor Senior especialista en Workplace e Infraestructura IT, orientando las funciones hacia la gestión de equipos, implementación de soluciones tecnológicas avanzadas y soporte estratégico en proyectos de migración y despliegue corporativo. El propósito principal consistió en garantizar la continuidad de las operaciones y la modernización tecnológica de los entornos de usuario final bajo estándares corporativos.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t2_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Liderazgo en migración Cloud:</strong> Lideré la migración masiva de Google Workspace a Microsoft 365, gestionando las identidades en Azure AD y migrando con éxito correos, calendarios y repositorios hacia Exchange Online, OneDrive y SharePoint.</li>
+                            <li><strong>Gestión del ciclo de vida de activos:</strong> Administré el parque de dispositivos desde su configuración inicial hasta su renovación, definiendo planes de actualización basados en seguridad y rendimiento, coordinando la disposición segura de hardware según normativas de protección de datos.</li>
+                            <li><strong>Soporte avanzado e incidencias complejas:</strong> Brindé soporte de segundo y tercer nivel en incidencias críticas de hardware, software y conectividad, coordinando equipos multidisciplinares para aplicar soluciones definitivas y reducir tiempos de respuesta.</li>
+                            <li><strong>Estandarización y rollouts masivos:</strong> Planifiqué e ejecuté rollouts a gran escala de aplicaciones corporativas, asegurando compatibilidad, disponibilidad y licenciamiento, además de documentar procedimientos técnicos para estandarizar procesos internos.</li>
+                            <li><strong>Gestión bajo marcos de trabajo profesionales:</strong> Colaboré activamente en proyectos de modernización on-premise y cloud, coordinando cronogramas y tareas bajo metodologías ágiles (Scrum, Kanban) y buenas prácticas de gestión (PMBOK, ITIL).</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t2_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-server"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t3_title">NexTReT | Supervisor de Turno y Consultor Técnico</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t3_period">Febrero de 2022 - Abril de 2023</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t3_loc">Barcelona, Cataluña, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t3_milestones">
+                        <div class="sub-header">Supervisor del Servicio de Soporte (Nov 2022 - Abr 2023)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de liderar y supervisar el turno de servicio técnico para asegurar un desarrollo operativo fluido y la total satisfacción de los clientes corporativos.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Garantía de servicio y capacitación:</strong> Velé por el correcto desarrollo operativo del servicio, asegurando que el equipo contara con las herramientas necesarias y la transferencia de conocimiento adecuada.</li>
+                            <li><strong>Documentación de procesos:</strong> Redacté, validé y actualicé procedimientos de nivel 1 (N1), proporcionando material documental crucial para la optimización en la gestión de incidencias.</li>
+                            <li><strong>Liderazgo de equipos técnicos:</strong> Mantuve la motivación y el compromiso del equipo a través de reuniones semanales estructuradas para obtener feedback y aplicar mejoras operativas.</li>
+                            <li><strong>Monitoreo y reporte de KPIs:</strong> Verifiqué el cumplimiento estricto de los SLAs y de las métricas operativas, elaborando informes de rendimiento y presentaciones ejecutivas para los stakeholders.</li>
+                        </ul>
+                        
+                        <div class="sub-header">Consultor Técnico (Feb 2022 - Nov 2022)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Analista técnico enfocado en la administración de sistemas corporativos y en la monitorización centralizada de redes y servidores para entornos de alta disponibilidad.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Monitorización masiva y proactiva:</strong> Supervisé un promedio de 1.000 hosts y más de 12.000 servicios críticos para más de 50 clientes corporativos, utilizando herramientas avanzadas como OP5, Nagios, Pandora, Centreon y Zabbix.</li>
+                            <li><strong>Administración de sistemas e infraestructura:</strong> Realicé tareas de administración de sistemas enfocado en Active Directory y ejecuté actualizaciones críticas en servidores Windows (2012, 2016, 2019) y Linux (Ubuntu, Red Hat).</li>
+                            <li><strong>Respaldo y mantenimiento de CPD:</strong> Implementé estrategias de copias de seguridad mediante instantáneas (snapshots), clones y la monitorización constante del Centro de Procesamiento de Datos (CPD) físico y virtualizado (VMware vSphere, Proxmox VE, Microsoft Hyper-V).</li>
+                            <li><strong>Gobernanza ITSM:</strong> Gestioné incidencias de forma sistemática a través de plataformas líderes como ServiceNow, Freshservice, ServiceManager, Jira Software y GLPi.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t3_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-hands-helping"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t4_title">AGEACA | Digital Project and Service Manager (Voluntariado)</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t4_period">Octubre de 2021 - Presente</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t4_loc">España (Ámbito Nacional e Internacional)</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t4_strategy">Dirección estratégica y gestión ejecutiva de proyectos en el área digital para una organización sin fines de lucro, liderando la transformación tecnológica, la difusión institucional y la capacitación de equipos multidisciplinares.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t4_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Estrategia y desarrollo digital:</strong> Diseñé e implementé proyectos integrales de desarrollo web, optimización de portales institucionales y posicionamiento estratégico en canales digitales a nivel nacional e internacional.</li>
+                            <li><strong>Planificación estratégica y eventos:</strong> Coordiné la planificación de eventos, gestión de calendarios logísticos, fechas críticas y recursos destinados a la captación y lanzamiento de nuevos programas educativos y talleres.</li>
+                            <li><strong>Liderazgo y dirección de equipos:</strong> Creé, lideré y supervisé equipos de trabajo para las diversas áreas de la organización, coordinando las funciones de creadores de contenido, community managers y la ejecución de campañas publicitarias digitales.</li>
+                            <li><strong>Gestión bajo metodologías ágiles:</strong> Apliqué con rigor el marco ágil Scrum en todas sus fases, garantizando una gestión del tiempo óptima, reuniones de revisión y mejora continua de los procesos.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t4_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-mobile-alt"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t5_title">SOSMATIC | IT Project Manager y Consultor Técnico</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t5_period">Agosto de 2020 - Febrero de 2022</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t5_loc">Barcelona, Cataluña, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t5_milestones">
+                        <div class="sub-header">IT Project Manager (Jul 2021 - Feb 2022)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de la planificación estratégica, ejecución y supervisión integral del proyecto de gestión y migración masiva de activos de movilidad para el personal corporativo de alta dirección.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Planificación integral del proyecto:</strong> Definí y planifiqué la migración tecnológica de 7.000 dispositivos móviles y tabletas Apple a nivel nacional, recopilando requerimientos clave y estableciendo acuerdos de nivel de servicio.</li>
+                            <li><strong>Gestión presupuestaria y de recursos:</strong> Evalué presupuestos, gestioné los plazos del cronograma corporativo y contraté, coordiné y lideré al personal técnico asignado para el despliegue nacional.</li>
+                            <li><strong>Mitigación de riesgos y backups:</strong> Identifiqué y gestioné proactivamente los riesgos, aplicando técnicas corporativas de control de cambios y asegurando un respaldo seguro de datos (backup) antes de la migración.</li>
+                            <li><strong>Gestión de Stakeholders y Documentación:</strong> Creé y mantuve la documentación completa del proyecto, analizando métricas de progreso y garantizando una comunicación transparente con los stakeholders principales.</li>
+                        </ul>
+                        
+                        <div class="sub-header">Consultor Técnico (Ago 2020 - Jul 2021)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Soporte técnico especializado de nivel 2 enfocado en el sector de las telecomunicaciones, operando bajo metodologías de Gestión de Servicios de TI (ITSM).</p>
+                        <ul class="achiev-list">
+                            <li><strong>Resolución de incidencias en redes:</strong> Abordé y resolví incidencias de comunicaciones complejas de forma remota, cumpliendo estrictamente con los tiempos de gestión acordados (SLA).</li>
+                            <li><strong>Administración de redes y conectividad:</strong> Administré redes LAN con especial enfoque en la configuración de firewalls, servidores FTP y el despliegue de redes privadas virtuales (VPN) para asegurar conexiones remotas fiables.</li>
+                            <li><strong>Seguimiento sistemático:</strong> Operé con eficacia sistemas de ticketing avanzados (OTRS, Zoho, Txeta) en entornos de alta confidencialidad y orientación a objetivos.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t5_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-users"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t6_title">AGEACA | Team Leader (Voluntariado)</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t6_period">Febrero de 2020 - Octubre de 2021</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t6_loc">Cataluña y Aragón, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t6_strategy">Responsable de la dirección de equipos y gestión del crecimiento institucional en las comunidades autónomas de Cataluña y Aragón, supervisando la calidad del servicio técnico y educativo prestado en múltiples sedes.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t6_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Estrategia de captación digital:</strong> Diseñé e implementé estrategias de marketing digital enfocadas en la captación continua de nuevos estudiantes y en expandir el alcance de la organización.</li>
+                            <li><strong>Dirección de programas formativos:</strong> Dirigí la capacitación y el desarrollo de futuros instructores y formadores, asegurando la transmisión adecuada de metodologías institucionales.</li>
+                            <li><strong>Supervisión de calidad (SLA):</strong> Supervisé la gestión de las formaciones en las distintas sedes, velando por la excelencia, la calidad del servicio y la satisfacción de los asistentes.</li>
+                            <li><strong>Liderazgo de equipos multidisciplinares:</strong> Creé y lideré células de trabajo compuestas por community managers, creadores de contenido y equipos de soporte a la inscripción.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t6_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-headset"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t7_title">OPTIMA Facility | IT Service Desk</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t7_period">Julio de 2019 - Junio de 2020</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t7_loc">Barcelona, Cataluña, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t7_strategy">Desempeño en el equipo de soporte corporativo, asumiendo la gestión integral de incidencias, monitorización proactiva e implementación de la infraestructura para el puesto de trabajo digital presencial y remoto.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t7_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Infraestructura de soporte:</strong> Supervisé la resolución de incidencias complejas y realicé monitorizaciones preventivas, configurando y desplegando ordenadores, equipos de trabajo y dispositivos móviles de forma masiva para teletrabajo seguro.</li>
+                            <li><strong>Innovación con Inteligencia Artificial:</strong> Colaboré directamente con la dirección del servicio en el diseño e implementación de un sistema piloto de IA enfocado en identificar incidencias técnicas recurrentes para aplicar planes de mejora continua.</li>
+                            <li><strong>Software de Gamificación:</strong> Participé en el desarrollo y validación de herramientas de gamificación interna orientadas a optimizar el cumplimiento de los indicadores clave de rendimiento (SLAs) del equipo.</li>
+                            <li><strong>Gestión operativa y flujos ágiles:</strong> Elaboré informes de seguimiento técnico y estructuré las tareas diarias mediante metodologías ágiles como Kanban y Microsoft Project.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t7_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t8_title">AGEACA | Facilitador de Formación (Voluntariado)</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t8_period">Agosto de 2018 - Febrero de 2026</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t8_loc">Cataluña y Aragón, España</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_challenge">Rol y Desafío Estratégico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t8_strategy">Instructor y tutor senior especializado en el desarrollo de competencias transversales, habilidades de liderazgo, comunicación estratégica y oratoria profesional ante audiencias corporativas y particulares.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t8_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Capacitación de alto impacto:</strong> Diseñé e impartí formaciones estructuradas en las áreas de crecimiento profesional, motivación al logro, liderazgo estratégico y técnicas avanzadas de manejo del estrés.</li>
+                            <li><strong>Optimización de habilidades blandas:</strong> Perfeccioné metodologías prácticas de oratoria y manejo del público, liderando grupos de 10 a 20 personas en sesiones intensivas semanales distribuidas en diversas sedes regionales.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t8_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-network-wired"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t9_title">Supermercado Ali Fung | IT Infrastructure Manager y Administrador de Redes</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t9_period">Junio de 2008 - Julio de 2018</span></span>
+                        <span><i class="fas fa-map-marker-alt text-interactivo mr-1.5"></i><span data-i18n="t9_loc">Maracay, Estado Aragua, Venezuela</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_milestones">Hitos y Resultados Corporativos</h3>
+                    <div data-i18n="t9_milestones">
+                        <div class="sub-header">Information Technology Infrastructure Manager (Jun 2012 - Jul 2018)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Dirección integral del departamento de informática, liderando la planificación estratégica, presupuestos y la ejecución de proyectos de infraestructura tecnológica y optimización de sistemas a gran escala.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Diseño de departamentos desde cero:</strong> Planifiqué e implementé con éxito la creación estructural de las áreas de Helpdesk y Service Desk corporativas, adoptando la metodología ITIL para optimizar la eficiencia operativa.</li>
+                            <li><strong>Gestión y desarrollo de sistemas ERP:</strong> Dirigí la administración del software ERP Bigwise, optimizando la base de datos relacional SQL Server y desarrollando soluciones modulares complementarias sobre entorno .NET.</li>
+                            <li><strong>Virtualización y mantenimiento evolutivo:</strong> Supervisé las tareas de mantenimiento evolutivo de la infraestructura IT, implementando entornos virtualizados con tecnología VMware en los Centros de Procesamiento de Datos.</li>
+                        </ul>
+                        
+                        <div class="sub-header">Administrador de Redes (Oct 2011 - Jun 2012)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de la seguridad lógica, perimetral y de la conectividad física entre las sedes de la organización.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Migración de sistemas de seguridad:</strong> Lideré el diseño y migración completa de la infraestructura de CCTV analógica hacia tecnología IP, ejecutando la instalación técnica de más de 200 cámaras de seguridad centralizadas.</li>
+                            <li><strong>Administración de conectividad corporativa:</strong> Configuré la arquitectura de conmutación (switching), enrutamiento (routing), firewalls perimetrales y políticas de antivirus.</li>
+                        </ul>
+
+                        <div class="sub-header">Técnico de Soporte Help Desk (Jun 2008 - Oct 2011)</div>
+                        <p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Soporte técnico inicial enfocado en la resolución de incidencias de hardware y software en un entorno corporativo multisede.</p>
+                        <ul class="achiev-list">
+                            <li><strong>Mantenimiento de parque informático:</strong> Gestioné de forma autónoma el soporte técnico operativo de más de 200 ordenadores y centros de impresión, coordinando la logística técnica entre 4 sedes de la empresa.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t9_skills_container"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"><i class="fas fa-graduation-cap"></i></div>
+                <div class="timeline-card">
+                    <h2 class="text-2xl font-zilla font-bold text-corporativo mb-2" data-i18n="t10_title">Universidad Nacional Experimental Politécnica de la Fuerza Armada | Ingeniería en Sistemas</h2>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 mb-6 gap-y-2 gap-x-6">
+                        <span><i class="far fa-calendar-alt text-interactivo mr-1.5"></i><span data-i18n="t10_period">Mayo de 2009 - Junio de 2017</span></span>
+                        <span><i class="fas fa-certificate text-interactivo mr-1.5"></i><span data-i18n="t10_loc">Graduado como Ingeniero en Sistemas, Tecnología de la información</span></span>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-2 text-lg" data-i18n="lbl_academic">Resumen Académico</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="t10_strategy">Fase de formación científico-técnica centrada en el diseño, desarrollo, implementación y auditoría de sistemas de información complejos, adquiriendo los fundamentos indispensables de la ingeniería de software, algoritmos y redes de datos.</p>
+
+                    <h3 class="font-bold text-textobase mb-4 text-lg border-b border-gray-100 pb-2" data-i18n="lbl_core">Competencias Desarrolladas</h3>
+                    <div data-i18n="t10_milestones">
+                        <ul class="achiev-list">
+                            <li><strong>Análisis analítico de infraestructuras:</strong> Capacidad avanzada en el modelado de bases de datos relacionales, optimización de algoritmos complejos, análisis estructurado de redes corporativas y gestión metodológica de la innovación tecnológica.</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-bold text-textobase mb-3 mt-6 text-sm uppercase tracking-wide text-gray-400" data-i18n="lbl_skills">Competencias y Tecnologías Consolidadas</h3>
+                    <div class="flex flex-wrap gap-2" id="t10_skills_container"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-12 pb-12">
+            <a href="index.html" class="inline-flex items-center justify-center bg-corporativo hover:bg-interactivo text-white font-semibold py-3 px-8 rounded-lg transition-all shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="nav_back">Volver a la Base (Inicio)</span>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // 1. Animaciones de Scroll (Intersection Observer)
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.timeline-item');
+            const progressBar = document.getElementById('progress-bar');
+            
+            // Función para calcular progreso de la línea
+            const updateProgress = () => {
+                const docElem = document.documentElement;
+                const docBody = document.body;
+                const scrollTop = docElem.scrollTop || docBody.scrollTop;
+                const scrollHeight = docElem.scrollHeight || docBody.scrollHeight;
+                const clientHeight = docElem.clientHeight;
+                
+                // Calcular el % scrolleado
+                const percent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+                progressBar.style.height = percent + '%';
+            };
+
+            window.addEventListener('scroll', updateProgress);
+            updateProgress(); // init
+
+            // Observer para revelar las tarjetas
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
+
+            // Init pill generation
+            generateSkillPills('es');
+        });
+
+        // 2. Diccionario Dinámico de Idiomas (ES/EN)
+        const dictionary = {
+            es: {
+                meta_title: "Deivis Salinas | Trayectoria y Enfoque en IT Management",
+                meta_desc: "Explora la línea de tiempo profesional de Deivis Salinas: experto en Transformación Digital, consultoría tecnológica, gestión ágil y dirección IT.",
+                nav_back: "Volver al Inicio",
+                hero_title: "Trayectoria Profesional",
+                hero_desc: "Historial cronológico ejecutivo. Liderazgo, innovación tecnológica y gestión de infraestructuras críticas corporativas.",
+                lbl_challenge: "Rol y Desafío Estratégico",
+                lbl_milestones: "Hitos y Resultados Corporativos",
+                lbl_skills: "Competencias y Tecnologías Consolidadas",
+                lbl_academic: "Resumen Académico",
+                lbl_core: "Competencias Desarrolladas",
+
+                // Ferrer
+                t1_title: "Ferrer | Responsable de TI",
+                t1_period: "Mayo de 2024 - Presente",
+                t1_loc: "Sant Cugat del Vallès, Cataluña, España",
+                t1_strategy: "Dirección y liderazgo técnico en un entorno industrial altamente regulado, asumiendo la gestión integral de proyectos y servicios tecnológicos tanto en el área de IT (Information Technology) como en OT (Operational Technology). El objetivo central se enfoca en asegurar la continuidad operativa de las plantas de producción, la evolución de sus infraestructuras críticas y la alineación directa con los objetivos estratégicos del negocio.",
+                t1_milestones: `<ul class="achiev-list"><li><strong>Dirección de proyectos de infraestructura:</strong> Lideré la renovación tecnológica de redes, virtualización avanzada de servidores y la gestión operativa de entornos híbridos on-premise y cloud.</li><li><strong>Coordinación de equipos y servicios gestionados:</strong> Coordiné un equipo técnico compuesto por 3 técnicos de soporte y proveedores externos, supervisando servicios en plataformas como Microsoft 365, Intune, Azure, redes Cisco y seguridad Palo Alto.</li><li><strong>Administración de infraestructura crítica:</strong> Asumí el control técnico de un parque compuesto por 85 switches Cisco (campo y core Nexus), 2 controladoras WiFi (WLC), 15 hosts físicos (ESX y Dell) con más de 150 máquinas virtuales, sistemas de backup IBM TS4300 e infraestructuras de seguridad corporativa.</li><li><strong>Ciberseguridad y operaciones de red:</strong> Gestioné el ecosistema de seguridad bajo un enfoque SASE mediante Netskope, coordinándome con el NOC (Network Operations Center) para la supervisión y resolución proactiva de incidencias críticas en infraestructura y comunicaciones.</li><li><strong>Integración en entornos industriales y de laboratorio:</strong> Supervisé el correcto funcionamiento de workplaces (1.000 dispositivos), sistemas OT (AGV para inventario y líneas de producción Zetes & Marchesini) y plataformas de software especializado de laboratorio (OpenLab, Empower, LIMS, LabVantage).</li></ul>`,
+                t1_skills_raw: "IT Management · Consultoría Tecnológica · Liderazgo de Equipos IT · Entornos Híbridos Cloud · Ciberseguridad SASE · Redes Cisco & Palo Alto · Infraestructura OT · Virtualización VMware · EasyVista",
+
+                // SEIDOR
+                t2_title: "SEIDOR | Consultor de Soporte de TI",
+                t2_period: "Marzo de 2023 - Mayo de 2024",
+                t2_loc: "Sant Cugat del Vallès, Cataluña, España",
+                t2_strategy: "Desempeño como Consultor Senior especialista en Workplace e Infraestructura IT, orientando las funciones hacia la gestión de equipos, implementación de soluciones tecnológicas avanzadas y soporte estratégico en proyectos de migración y despliegue corporativo. El propósito principal consistió en garantizar la continuidad de las operaciones y la modernización tecnológica de los entornos de usuario final bajo estándares corporativos.",
+                t2_milestones: `<ul class="achiev-list"><li><strong>Liderazgo en migración Cloud:</strong> Lideré la migración masiva de Google Workspace a Microsoft 365, gestionando las identidades en Azure AD y migrando con éxito correos, calendarios y repositorios hacia Exchange Online, OneDrive y SharePoint.</li><li><strong>Gestión del ciclo de vida de activos:</strong> Administré el parque de dispositivos desde su configuración inicial hasta su renovación, definiendo planes de actualización basados en seguridad y rendimiento, coordinando la disposición segura de hardware según normativas de protección de datos.</li><li><strong>Soporte avanzado e incidencias complejas:</strong> Brindé soporte de segundo y tercer nivel en incidencias críticas de hardware, software y conectividad, coordinando equipos multidisciplinares para aplicar soluciones definitivas y reducir tiempos de respuesta.</li><li><strong>Estandarización y rollouts masivos:</strong> Planifiqué e ejecuté rollouts a gran escala de aplicaciones corporativas, asegurando compatibilidad, disponibilidad y licenciamiento, además de documentar procedimientos técnicos para estandarizar procesos internos.</li><li><strong>Gestión bajo marcos de trabajo profesionales:</strong> Colaboré activamente en proyectos de modernización on-premise y cloud, coordinando cronogramas y tareas bajo metodologías ágiles (Scrum, Kanban) y buenas prácticas de gestión (PMBOK, ITIL).</li></ul>`,
+                t2_skills_raw: "Estrategia IT · Migraciones Cloud · Microsoft 365 & Azure AD · Metodologías Ágiles · Ciclo de Vida de Activos · Estandarización de Procesos · Frameworks Scrum / Kanban",
+
+                // NexTReT
+                t3_title: "NexTReT | Supervisor de Turno y Consultor Técnico",
+                t3_period: "Febrero de 2022 - Abril de 2023",
+                t3_loc: "Barcelona, Cataluña, España",
+                t3_milestones: `<div class="sub-header">Supervisor del Servicio de Soporte (Nov 2022 - Abr 2023)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de liderar y supervisar el turno de servicio técnico para asegurar un desarrollo operativo fluido y la total satisfacción de los clientes corporativos.</p><ul class="achiev-list"><li><strong>Garantía de servicio y capacitación:</strong> Velé por el correcto desarrollo operativo del servicio, asegurando que el equipo contara con las herramientas necesarias y la transferencia de conocimiento adecuada.</li><li><strong>Documentación de procesos:</strong> Redacté, validé y actualicé procedimientos de nivel 1 (N1), proporcionando material documental crucial para la optimización en la gestión de incidencias.</li><li><strong>Liderazgo de equipos técnicos:</strong> Mantuve la motivación y el compromiso del equipo a través de reuniones semanales estructuradas para obtener feedback y aplicar mejoras operativas.</li><li><strong>Monitoreo y reporte de KPIs:</strong> Verifiqué el cumplimiento estricto de los SLAs y de las métricas operativas, elaborando informes de rendimiento y presentaciones ejecutivas para los stakeholders.</li></ul><div class="sub-header">Consultor Técnico (Feb 2022 - Nov 2022)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Analista técnico enfocado en la administración de sistemas corporativos y en la monitorización centralizada de redes y servidores para entornos de alta disponibilidad.</p><ul class="achiev-list"><li><strong>Monitorización masiva y proactiva:</strong> Supervisé un promedio de 1.000 hosts y más de 12.000 servicios críticos para más de 50 clientes corporativos, utilizando herramientas avanzadas como OP5, Nagios, Pandora, Centreon y Zabbix.</li><li><strong>Administración de sistemas e infraestructura:</strong> Realicé tareas de administración de sistemas enfocado en Active Directory y ejecuté actualizaciones críticas en servidores Windows (2012, 2016, 2019) y Linux (Ubuntu, Red Hat).</li><li><strong>Respaldo y mantenimiento de CPD:</strong> Implementé estrategias de copias de seguridad mediante instantáneas (snapshots), clones y la monitorización constante del Centro de Procesamiento de Datos (CPD) físico y virtualizado (VMware vSphere, Proxmox VE, Microsoft Hyper-V).</li><li><strong>Gobernanza ITSM:</strong> Gestioné incidencias de forma sistemática a través de plataformas líderes como ServiceNow, Freshservice, ServiceManager, Jira Software y GLPi.</li></ul>`,
+                t3_skills_raw: "Supervisión de Servicios · Monitoreo de Infraestructura (Zabbix/Nagios) · Administración de Servidores · Virtualización (VMware/Proxmox) · Gestión de SLAs · ITIL Core · ServiceNow",
+
+                // AGEACA 1
+                t4_title: "AGEACA | Digital Project and Service Manager (Voluntariado)",
+                t4_period: "Octubre de 2021 - Presente",
+                t4_loc: "España (Ámbito Nacional e Internacional)",
+                t4_strategy: "Dirección estratégica y gestión ejecutiva de proyectos en el área digital para una organización sin fines de lucro, liderando la transformación tecnológica, la difusión institucional y la capacitación de equipos multidisciplinares.",
+                t4_milestones: `<ul class="achiev-list"><li><strong>Estrategia y desarrollo digital:</strong> Diseñé e implementé proyectos integrales de desarrollo web, optimización de portales institucionales y posicionamiento estratégico en canales digitales a nivel nacional e internacional.</li><li><strong>Planificación estratégica y eventos:</strong> Coordiné la planificación de eventos, gestión de calendarios logísticos, fechas críticas y recursos destinados a la captación y lanzamiento de nuevos programas educativos y talleres.</li><li><strong>Liderazgo y dirección de equipos:</strong> Creé, lideré y supervisé equipos de trabajo para las diversas áreas de la organización, coordinando las funciones de creadores de contenido, community managers y la ejecución de campañas publicitarias digitales.</li><li><strong>Gestión bajo metodologías ágiles:</strong> Apliqué con rigor el marco ágil Scrum en todas sus fases, garantizando una gestión del tiempo óptima, reuniones de revisión y mejora continua de los procesos.</li></ul>`,
+                t4_skills_raw: "Gestión de Proyectos Digitales · Metodología Scrum · Marketing Digital · Liderazgo de Equipos · Planificación Estratégica · Optimización de Procesos · Coordinación Multidisciplinar",
+
+                // SOSMATIC
+                t5_title: "SOSMATIC | IT Project Manager y Consultor Técnico",
+                t5_period: "Agosto de 2020 - Febrero de 2022",
+                t5_loc: "Barcelona, Cataluña, España",
+                t5_milestones: `<div class="sub-header">IT Project Manager (Jul 2021 - Feb 2022)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de la planificación estratégica, ejecución y supervisión integral del proyecto de gestión y migración masiva de activos de movilidad para el personal corporativo de alta dirección.</p><ul class="achiev-list"><li><strong>Planificación integral del proyecto:</strong> Definí y planifiqué la migración tecnológica de 7.000 dispositivos móviles y tabletas Apple a nivel nacional, recopilando requerimientos clave y estableciendo acuerdos de nivel de servicio.</li><li><strong>Gestión presupuestaria y de recursos:</strong> Evalué presupuestos, gestioné los plazos del cronograma corporativo y contraté, coordiné y lideré al personal técnico asignado para el despliegue nacional.</li><li><strong>Mitigación de riesgos y backups:</strong> Identifiqué y gestioné proactivamente los riesgos, aplicando técnicas corporativas de control de cambios y asegurando un respaldo seguro de datos (backup) antes de la migración.</li><li><strong>Gestión de Stakeholders y Documentación:</strong> Creé y mantuve la documentación completa del proyecto, analizando métricas de progreso y garantizando una comunicación transparente con los stakeholders principales.</li></ul><div class="sub-header">Consultor Técnico (Ago 2020 - Jul 2021)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Soporte técnico especializado de nivel 2 enfocado en el sector de las telecomunicaciones, operando bajo metodologías de Gestión de Servicios de TI (ITSM).</p><ul class="achiev-list"><li><strong>Resolución de incidencias en redes:</strong> Abordé y resolví incidencias de comunicaciones complejas de forma remota, cumpliendo estrictamente con los tiempos de gestión acordados (SLA).</li><li><strong>Administración de redes y conectividad:</strong> Administré redes LAN con especial enfoque en la configuración de firewalls, servidores FTP y el despliegue de redes privadas virtuales (VPN) para asegurar conexiones remotas fiables.</li><li><strong>Seguimiento sistemático:</strong> Operé con eficacia sistemas de ticketing avanzados (OTRS, Zoho, Txeta) en entornos de alta confidencialidad y orientación a objetivos.</li></ul>`,
+                t5_skills_raw: "Gestión de Proyectos IT · Control Presupuestario · Metodologías PMP · Administración de Redes · Configuración de VPN · Gestión de Riesgos · Microsoft Project",
+
+                // AGEACA 2
+                t6_title: "AGEACA | Team Leader (Voluntariado)",
+                t6_period: "Febrero de 2020 - Octubre de 2021",
+                t6_loc: "Cataluña y Aragón, España",
+                t6_strategy: "Responsable de la dirección de equipos y gestión del crecimiento institucional en las comunidades autónomas de Cataluña y Aragón, supervisando la calidad del servicio técnico y educativo prestado en múltiples sedes.",
+                t6_milestones: `<ul class="achiev-list"><li><strong>Estrategia de captación digital:</strong> Diseñé e implementé estrategias de marketing digital enfocadas en la captación continua de nuevos estudiantes y en expandir el alcance de la organización.</li><li><strong>Dirección de programas formativos:</strong> Dirigí la capacitación y el desarrollo de futuros instructores y formadores, asegurando la transmisión adecuada de metodologías institucionales.</li><li><strong>Supervisión de calidad (SLA):</strong> Supervisé la gestión de las formaciones en las distintas sedes, velando por la excelencia, la calidad del servicio y la satisfacción de los asistentes.</li><li><strong>Liderazgo de equipos multidisciplinares:</strong> Creé y lideré células de trabajo compuestas por community managers, creadores de contenido y equipos de soporte a la inscripción.</li></ul>`,
+                t6_skills_raw: "Liderazgo de Equipos · Gestión de Operaciones · Marketing Digital · Aseguramiento de la Calidad · Capacitación de Personal · Supervisión Multisede",
+
+                // OPTIMA
+                t7_title: "OPTIMA Facility | IT Service Desk",
+                t7_period: "Julio de 2019 - Junio de 2020",
+                t7_loc: "Barcelona, Cataluña, España",
+                t7_strategy: "Desempeño en el equipo de soporte corporativo, asumiendo la gestión integral de incidencias, monitorización proactiva e implementación de la infraestructura para el puesto de trabajo digital presencial y remoto.",
+                t7_milestones: `<ul class="achiev-list"><li><strong>Infraestructura de soporte:</strong> Supervisé la resolución de incidencias complejas y realicé monitorizaciones preventivas, configurando y desplegando ordenadores, equipos de trabajo y dispositivos móviles de forma masiva para teletrabajo seguro.</li><li><strong>Innovación con Inteligencia Artificial:</strong> Colaboré directamente con la dirección del servicio en el diseño e implementación de un sistema piloto de IA enfocado en identificar incidencias técnicas recurrentes para aplicar planes de mejora continua.</li><li><strong>Software de Gamificación:</strong> Participé en el desarrollo y validación de herramientas de gamificación interna orientadas a optimizar el cumplimiento de los indicadores clave de rendimiento (SLAs) del equipo.</li><li><strong>Gestión operativa y flujos ágiles:</strong> Elaboré informes de seguimiento técnico y estructuré las tareas diarias mediante metodologías ágiles como Kanban y Microsoft Project.</li></ul>`,
+                t7_skills_raw: "Gestión de Service Desk · Proyectos de Inteligencia Artificial · Métricas y KPIs (SLA) · Metodología Kanban · Administración de SharePoint · Microsoft Teams",
+
+                // AGEACA 3
+                t8_title: "AGEACA | Facilitador de Formación (Voluntariado)",
+                t8_period: "Agosto de 2018 - Febrero de 2026",
+                t8_loc: "Cataluña y Aragón, España",
+                t8_strategy: "Instructor y tutor senior especializado en el desarrollo de competencias transversales, habilidades de liderazgo, comunicación estratégica y oratoria profesional ante audiencias corporativas y particulares.",
+                t8_milestones: `<ul class="achiev-list"><li><strong>Capacitación de alto impacto:</strong> Diseñé e impartí formaciones estructuradas en las áreas de crecimiento profesional, motivación al logro, liderazgo estratégico y técnicas avanzadas de manejo del estrés.</li><li><strong>Optimización de habilidades blandas:</strong> Perfeccioné metodologías prácticas de oratoria y manejo del público, liderando grupos de 10 a 20 personas en sesiones intensivas semanales distribuidas en diversas sedes regionales.</li></ul>`,
+                t8_skills_raw: "Oratoria y Comunicación · Liderazgo · Mentoring & Coaching · Gestión de Grupos · Capacitación Profesional",
+
+                // Ali Fung
+                t9_title: "Supermercado Ali Fung | IT Infrastructure Manager y Administrador de Redes",
+                t9_period: "Junio de 2008 - Julio de 2018",
+                t9_loc: "Maracay, Estado Aragua, Venezuela",
+                t9_milestones: `<div class="sub-header">Information Technology Infrastructure Manager (Jun 2012 - Jul 2018)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Dirección integral del departamento de informática, liderando la planificación estratégica, presupuestos y la ejecución de proyectos de infraestructura tecnológica y optimización de sistemas a gran escala.</p><ul class="achiev-list"><li><strong>Diseño de departamentos desde cero:</strong> Planifiqué e implementé con éxito la creación estructural de las áreas de Helpdesk y Service Desk corporativas, adoptando la metodología ITIL para optimizar la eficiencia operativa.</li><li><strong>Gestión y desarrollo de sistemas ERP:</strong> Dirigí la administración del software ERP Bigwise, optimizando la base de datos relacional SQL Server y desarrollando soluciones modulares complementarias sobre entorno .NET.</li><li><strong>Virtualización y mantenimiento evolutivo:</strong> Supervisé las tareas de mantenimiento evolutivo de la infraestructura IT, implementando entornos virtualizados con tecnología VMware en los Centros de Procesamiento de Datos.</li></ul><div class="sub-header">Administrador de Redes (Oct 2011 - Jun 2012)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Responsable de la seguridad lógica, perimetral y de la conectividad física entre las sedes de la organización.</p><ul class="achiev-list"><li><strong>Migración de sistemas de seguridad:</strong> Lideré el diseño y migración completa de la infraestructura de CCTV analógica hacia tecnología IP, ejecutando la instalación técnica de más de 200 cámaras de seguridad centralizadas.</li><li><strong>Administración de conectividad corporativa:</strong> Configuré la arquitectura de conmutación (switching), enrutamiento (routing), firewalls perimetrales y políticas de antivirus.</li></ul><div class="sub-header">Técnico de Soporte Help Desk (Jun 2008 - Oct 2011)</div><p class="text-gray-600 mb-4 text-sm"><strong>Rol y Desafío Estratégico:</strong> Soporte técnico inicial enfocado en la resolución de incidencias de hardware y software en un entorno corporativo multisede.</p><ul class="achiev-list"><li><strong>Mantenimiento de parque informático:</strong> Gestioné de forma autónoma el soporte técnico operativo de más de 200 ordenadores y centros de impresión, coordinando la logística técnica entre 4 sedes de la empresa.</li></ul>`,
+                t9_skills_raw: "Dirección de Departamentos IT · Implementación ITIL · Administración de ERP & SQL Server · Desarrollo .NET · Arquitectura de Redes · Seguridad CCTV IP · Virtualización VMware",
+
+                // UNEFA
+                t10_title: "Universidad Nacional Experimental Politécnica de la Fuerza Armada | Ingeniería en Sistemas",
+                t10_period: "Mayo de 2009 - Junio de 2017",
+                t10_loc: "Graduado como Ingeniero en Sistemas, Tecnología de la información",
+                t10_strategy: "Fase de formación científico-técnica centrada en el diseño, desarrollo, implementación y auditoría de sistemas de información complejos, adquiriendo los fundamentos indispensables de la ingeniería de software, algoritmos y redes de datos.",
+                t10_milestones: `<ul class="achiev-list"><li><strong>Análisis analítico de infraestructuras:</strong> Capacidad avanzada en el modelado de bases de datos relacionales, optimización de algoritmos complejos, análisis estructurado de redes corporativas y gestión metodológica de la innovación tecnológica.</li></ul>`,
+                t10_skills_raw: "Ingeniería de Sistemas · Pensamiento Analítico · Estructura de Datos · Modelado de Algoritmos · Arquitectura de Redes de Información"
+            },
+            
+            en: {
+                meta_title: "Deivis Salinas | Career Timeline & IT Management Blueprint",
+                meta_desc: "Explore the professional timeline of Deivis Salinas: expert in Digital Transformation, tech consulting, agile management, and enterprise IT leadership.",
+                nav_back: "Back to Home",
+                hero_title: "Professional Timeline",
+                hero_desc: "Executive chronological history. Leadership, technological innovation, and critical corporate infrastructure management.",
+                lbl_challenge: "Strategic Role & Challenge",
+                lbl_milestones: "Corporate Milestones & Results",
+                lbl_skills: "Perks & Skills Acquired",
+                lbl_academic: "Academic Summary",
+                lbl_core: "Core Skills Developed",
+
+                // Ferrer
+                t1_title: "Ferrer | IT Infrastructure and Operations Lead",
+                t1_period: "May 2024 - Present",
+                t1_loc: "Sant Cugat del Vallès, Catalonia, Spain",
+                t1_strategy: "Strategic leadership and technical management within a highly regulated industrial environment, overseeing end-to-end technology projects and services across both IT (Information Technology) and OT (Operational Technology) divisions. Core functions focus on guaranteeing plant operational continuity, driving infrastructure evolution, and aligning tech deployments with strict business goals.",
+                t1_milestones: `<ul class="achiev-list"><li><strong>Infrastructure Project Management:</strong> Directed high-impact infrastructure upgrades, network technology refreshes, advanced server virtualization, and the lifecycle management of hybrid on-premise/cloud environments with zero operational downtime.</li><li><strong>Team and Managed Services Coordination:</strong> Supervised an internal technical support team of 3 engineers along with external vendors, managing corporate deployments on Microsoft 365, Intune, Azure, Cisco networks, and Palo Alto security.</li><li><strong>Critical Infrastructure Administration:</strong> Governed a robust hardware ecosystem consisting of 85 Cisco switches (field and core Nexus), 2 WiFi controllers (WLC), 15 physical hosts (ESX and Dell) running 150+ virtual machines, and IBM TS4300 backup arrays.</li><li><strong>Cybersecurity and Network Operations:</strong> Managed a secure network perimeter following a SASE framework via Netskope, collaborating with the NOC (Network Operations Center) for the proactive resolution of high-severity infrastructure incidents.</li><li><strong>Industrial and Laboratory Systems Integration:</strong> Oversaw a massive corporate workplace (1,000 devices), automated industrial OT systems (AGV inventory units and Zetes & Marchesini production lines), and specialized laboratory software suites (OpenLab, Empower, LIMS, LabVantage).</li></ul>`,
+                t1_skills_raw: "IT Management · Tech Consulting · IT Team Leadership · Hybrid Cloud Architectures · SASE Cybersecurity · Cisco & Palo Alto Networking · OT Environments · VMware Virtualization · EasyVista",
+
+                // SEIDOR
+                t2_title: "SEIDOR | Senior IT Infrastructure Consultant",
+                t2_period: "March 2023 - May 2024",
+                t2_loc: "Sant Cugat del Vallès, Catalonia, Spain",
+                t2_strategy: "Served as Senior Workplace and IT Infrastructure Consultant, focusing on team coordination, advanced technical rollouts, and strategic support for platform migrations and corporate technology deployments. Assured service continuity and infrastructure modernization across final user endpoints in line with corporate benchmarks.",
+                t2_milestones: `<ul class="achiev-list"><li><strong>Cloud Migration Leadership:</strong> Led the migration from Google Workspace to Microsoft 365, regulating active identities under Azure AD and securely transferring emails, calendars, and file repositories to Exchange Online, OneDrive, and SharePoint.</li><li><strong>Asset Lifecycle Management:</strong> Supervised the corporate device fleet from initial provisioning to retirement, creating lifecycle policies based on safety and performance while ensuring hardware disposal compliant with data protection laws.</li><li><strong>Advanced Technical Troubleshooting:</strong> Handled Tier 2 and Tier 3 engineering support for complex hardware, software, and data connectivity incidents, coordinating multi-skilled squads to implement permanent root-cause fixes.</li><li><strong>Process Standardization:</strong> Managed large-scale enterprise application rollouts, verifying environmental compatibility and licensing compliance while authoring extensive internal technical blueprints.</li><li><strong>Agile Project Management:</strong> Contributed to modernizing cloud and on-premise structures, orchestrating timelines and dependencies under agile frameworks (Scrum, Kanban) and governance models (PMBOK, ITIL).</li></ul>`,
+                t2_skills_raw: "IT Strategy · Cloud Migrations · Microsoft 365 & Azure AD · Agile Management · Asset Lifecycle Strategy · Process Standardization · Scrum / Kanban Frameworks",
+
+                // NexTReT
+                t3_title: "NexTReT | Support Shift Supervisor & Technical Consultant",
+                t3_period: "February 2022 - April 2023",
+                t3_loc: "Barcelona, Catalonia, Spain",
+                t3_milestones: `<div class="sub-header">Support Service Shift Supervisor (Nov 2022 - Apr 2023)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Responsible for guiding and supervising the technical service shift to guarantee continuous operations and enterprise client satisfaction.</p><ul class="achiev-list"><li><strong>Continuous Service Delivery:</strong> Maintained smooth operational workflows, providing technical engineering staff with the training, tools, and leadership necessary for execution.</li><li><strong>Technical Documentation:</strong> Authored, validated, and updated crucial Tier 1 (N1) support manuals, significantly reducing incident handling friction.</li><li><strong>Team Leadership & Optimization:</strong> Maintained high performance across the engineering shift through structured weekly feedback meetings designed to clear bottlenecks.</li><li><strong>SLA Tracking and Stakeholder Reporting:</strong> Enforced absolute compliance with corporate SLAs, drafting comprehensive analytical progress reports for executive stakeholders.</li></ul><div class="sub-header">Technical Consultant (Feb 2022 - Nov 2022)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Infrastructure analyst focused on systems administration, data center tracking, and network management within high-yield corporate settings.</p><ul class="achiev-list"><li><strong>Proactive Infrastructure Monitoring:</strong> Monitored over 1,000 hosts and 12,000 infrastructure services in real-time using advanced platforms like Nagios, Zabbix, OP5, Pandora, and Centreon.</li><li><strong>Systems Administration:</strong> Handled systems engineering tasks centered on Active Directory while executing critical patch updates across Windows Server (2012 to 2019) and Linux systems (Ubuntu, Red Hat).</li><li><strong>Data Center Operations & Backups:</strong> Maintained physical and virtualized environments (VMware vSphere, Proxmox VE, Microsoft Hyper-V) by engineering snapshot, cloning, and backup architectures.</li><li><strong>ITSM Governance:</strong> Handled high-volume corporate ticketing processes through enterprise ITSM managers including ServiceNow, Jira Software, Freshservice, ServiceManager, and GLPi.</li></ul>`,
+                t3_skills_raw: "Support Operations Management · Infrastructure Monitoring · System Administration · Virtualization (VMware/Proxmox) · SLA Governance · ITIL Core Principles · ServiceNow",
+
+                // AGEACA 1
+                t4_title: "AGEACA | Digital Project and Service Manager (Volunteering)",
+                t4_period: "October 2021 - Present",
+                t4_loc: "Spain (National & International Scope)",
+                t4_strategy: "Strategic direction and executive project management in the digital field for a non-profit organization, leading technological transformation, institutional dissemination, and training of multidisciplinary teams.",
+                t4_milestones: `<ul class="achiev-list"><li><strong>Digital Strategy and Development:</strong> Designed and implemented comprehensive web development projects, optimization of institutional portals, and strategic positioning on digital channels nationally and internationally.</li><li><strong>Strategic Planning and Events:</strong> Coordinated event planning, logistical calendars, critical dates, and resources aimed at recruiting and launching new educational programs and workshops.</li><li><strong>Leadership and Team Direction:</strong> Created, led, and supervised work teams for various areas of the organization, coordinating the functions of content creators, community managers, and the execution of digital advertising campaigns.</li><li><strong>Agile Management:</strong> Rigorously applied the agile Scrum framework across all phases, ensuring optimal time management, review meetings, and continuous process improvement.</li></ul>`,
+                t4_skills_raw: "Digital Project Management · Scrum Methodology · Digital Marketing · Team Leadership · Strategic Planning · Process Optimization · Multidisciplinary Coordination",
+
+                // SOSMATIC
+                t5_title: "SOSMATIC | IT Project Manager & Technical Consultant",
+                t5_period: "August 2020 - February 2022",
+                t5_loc: "Barcelona, Catalonia, Spain",
+                t5_milestones: `<div class="sub-header">IT Project Manager (Jul 2021 - Feb 2022)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Guided the end-to-end planning, resource deployment, and execution of a mobility asset migration project for corporate C-level staff and management.</p><ul class="achiev-list"><li><strong>Project Scope Planning:</strong> Outlined and led the tech migration project of 7,000 Apple assets (iPhones and iPads) across national branches, defining timeline milestones and service level baselines.</li><li><strong>Resource and Budget Allocation:</strong> Managed financials, tracked project schedules, and handled the selection, hiring, and onboarding of deployment support staff.</li><li><strong>Risk Mitigation & Data Integrity:</strong> Actively controlled dependencies, utilizing formal change-management methods to secure project scope while supervising corporate pre-migration data backup routines.</li><li><strong>Stakeholder Engagement & Reporting:</strong> Developed and preserved extensive technical blueprints, analyzing milestone tracking data to provide complete visibility to corporate sponsors.</li></ul><div class="sub-header">Technical Consultant Tier 2 (Aug 2020 - Jul 2021)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Deployed as an elite Tier 2 specialist providing remote engineering support within the telecommunications sector under ITSM practices.</p><ul class="achiev-list"><li><strong>Network Troubleshooting:</strong> Troubleshot and fixed high-level data connectivity and networking tickets remotely, strictly protecting client SLA parameters.</li><li><strong>LAN and Connectivity Engineering:</strong> Managed corporate LAN topologies, handling firewall configuration, secure file data structures, and safe remote user paths via VPN tunnels.</li><li><strong>ITSM Ticketing Management:</strong> Utilized professional platform managers including OTRS, Zoho, and Txeta within strict, target-driven business settings.</li></ul>`,
+                t5_skills_raw: "Agile Project Management · Budgetary Control · PMP Methodology · Network Administration · VPN Deployment · Risk Management · Microsoft Project",
+
+                // AGEACA 2
+                t6_title: "AGEACA | Team Leader (Volunteering)",
+                t6_period: "February 2020 - October 2021",
+                t6_loc: "Catalonia and Aragon, Spain",
+                t6_strategy: "Responsible for team direction and institutional growth management in the autonomous communities of Catalonia and Aragon, supervising the quality of technical and educational services provided across multiple locations.",
+                t6_milestones: `<ul class="achiev-list"><li><strong>Digital Recruitment Strategy:</strong> Designed and implemented digital marketing strategies focused on continuous student recruitment and expanding the organization's outreach.</li><li><strong>Training Program Direction:</strong> Directed the qualification and development of future instructors and educators, ensuring appropriate transmission of institutional methodologies.</li><li><strong>Quality Supervision (SLA):</strong> Supervised training management across different branches, ensuring excellence, quality of service, and attendee satisfaction.</li><li><strong>Multidisciplinary Team Leadership:</strong> Created and led working cells comprised of community managers, content creators, and enrollment support teams.</li></ul>`,
+                t6_skills_raw: "Team Leadership · Operations Management · Digital Marketing · Quality Assurance · Staff Training · Multi-site Supervision",
+
+                // OPTIMA
+                t7_title: "OPTIMA Facility | IT Service Desk Analyst",
+                t7_period: "July 2019 - June 2020",
+                t7_loc: "Barcelona, Catalonia, Spain",
+                t7_strategy: "Core tech support member managing digital workplace deployments, incident workflows, and hardware provisioning across both physical facilities and secure distributed remote work environments.",
+                t7_milestones: `<ul class="achiev-list"><li><strong>Support Infrastructure Operations:</strong> Handled tracking and preventive troubleshooting, assembling and rolling out computer hardware and mobile setups for staff on a large scale.</li><li><strong>Artificial Intelligence Pilot Implementation:</strong> Acted as direct assistant to the Service Director, participating in designing a pilot AI routine configured to track recurring data logs to execute continuous service optimization.</li><li><strong>Corporate Gamification Testing:</strong> Helped develop and test internal gamification software strategies engineered to raise front-line technical productivity and shield crucial SLA obligations.</li><li><strong>Agile Project Coordination:</strong> Mapped work processes by using structured Kanban approaches within corporate Microsoft 365 and SharePoint hubs.</li></ul>`,
+                t7_skills_raw: "Workplace Engineering · Remote Work Deployment · AI Pilot Implementation · Corporate Gamification · Kanban Workflows · SharePoint Governance",
+
+                // AGEACA 3
+                t8_title: "AGEACA | Training Facilitator (Volunteering)",
+                t8_period: "August 2018 - February 2026",
+                t8_loc: "Catalonia and Aragon, Spain",
+                t8_strategy: "Senior instructor and tutor specialized in the development of transversal competencies, leadership skills, strategic communication, and professional public speaking for corporate and private audiences.",
+                t8_milestones: `<ul class="achiev-list"><li><strong>High-Impact Training:</strong> Designed and delivered structured training in the areas of professional growth, achievement motivation, strategic leadership, and advanced stress management techniques.</li><li><strong>Soft Skills Optimization:</strong> Refined practical public speaking and audience management methodologies, leading groups of 10 to 20 people in intensive weekly sessions distributed across various regional locations.</li></ul>`,
+                t8_skills_raw: "Public Speaking & Communication · Leadership · Mentoring & Coaching · Group Management · Professional Training",
+
+                // Ali Fung
+                t9_title: "Supermercado Ali Fung | IT Infrastructure Manager & Network Admin",
+                t9_period: "June 2008 - July 2018",
+                t9_loc: "Maracay, Aragua State, Venezuela",
+                t9_milestones: `<div class="sub-header">Information Technology Infrastructure Manager (Jun 2012 - Jul 2018)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Directed the corporate IT department, shaping technology roadmaps, system availability frameworks, budgets, and computing infrastructure upgrades from the ground up.</p><ul class="achiev-list"><li><strong>Greenfield Infrastructure Build:</strong> Planned and built the company's first professional Helpdesk and Service Desk departments, adapting ITIL frameworks to formalize technology operations.</li><li><strong>ERP Systems and Database Administration:</strong> Governed business-critical systems by managing the Bigwise ERP suite, tuning relational SQL Server backends, and developing custom software extensions in .NET.</li><li><strong>Data Center Virtualization:</strong> Oversaw ongoing evolutionary data center upgrades, virtualizing physical server networks with VMware systems to drive down operational overhead.</li></ul><div class="sub-header">Network Administrator (Oct 2011 - Jun 2012)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Managed network topologies, perimeter defenses, and physical interconnectivity layouts across corporate retail zones.</p><ul class="achiev-list"><li><strong>Facility Security Upgrades:</strong> Engineered a total upgrade of physical facilities safety, migrating legacy analog CCTV systems into an IP camera network comprising over 200 centralized nodes.</li><li><strong>Core Connectivity Management:</strong> Configured core network components, handling switching, routing tables, hardware firewalls, and centralized security applications.</li></ul><div class="sub-header">Technical Support Help Desk (Jun 2008 - Oct 2011)</div><p class="text-gray-600 mb-4 text-sm"><strong>Strategic Role & Challenge:</strong> Started my technical journey on the ground floor, handling active user incidents and micro-computing setups across local business points.</p><ul class="achiev-list"><li><strong>Multi-Branch Fleet Maintenance:</strong> Maintained a computing ecosystem of more than 200 workstations and printing stations across 4 separate facilities, demonstrating high autonomous coordination.</li></ul>`,
+                t9_skills_raw: "IT Department Governance · Greenfield ITIL Deployments · ERP & SQL Server Administration · .NET Development · Core Network Architecture · IP CCTV Security · VMware Virtualization",
+
+                // UNEFA
+                t10_title: "Universidad Nacional Experimental Politécnica de la Fuerza Armada | Systems Engineering",
+                t10_period: "May 2009 - June 2017",
+                t10_loc: "Graduated as Systems Engineer, Information Technology",
+                t10_strategy: "Rigorous scientific and technical background focused on the design, deployment, implementation, and auditing of intricate information networks, mastering software engineering principles, algorithms, and data workflows.",
+                t10_milestones: `<ul class="achiev-list"><li><strong>Analytical Infrastructure Modeling:</strong> Advanced capabilities in database design, algorithmic efficiency optimization, systematic network structure analysis, and architectural framework deployment.</li></ul>`,
+                t10_skills_raw: "Systems Engineering · Analytical Logic · Data Structures · Algorithmic Optimization · Computer Architecture"
+            }
+        };
+
+        // Función Helper para generar las "Píldoras" (Badges) de habilidades
+        function generateSkillPills(lang) {
+            for(let i=1; i<=10; i++) {
+                const rawString = dictionary[lang][`t${i}_skills_raw`];
+                const container = document.getElementById(`t${i}_skills_container`);
+                if(rawString && container) {
+                    const skillsArray = rawString.split('·').map(s => s.trim()).filter(s => s.length > 0);
+                    let pillsHTML = '';
+                    skillsArray.forEach(skill => {
+                        pillsHTML += `<span class="inline-block bg-fondoclaro text-corporativo text-xs px-3 py-1.5 rounded-md border border-blue-100 font-medium whitespace-nowrap shadow-sm">${skill}</span>`;
+                    });
+                    container.innerHTML = pillsHTML;
+                }
+            }
+        }
+
+        // Función de cambio de idioma
+        function changeLanguage(lang) {
+            // Actualizar Meta Tags
+            document.getElementById('meta-title').innerText = dictionary[lang].meta_title;
+            document.getElementById('meta-desc').setAttribute('content', dictionary[lang].meta_desc);
+
+            // Reemplazar Textos en HTML
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (dictionary[lang][key]) {
+                    element.innerHTML = dictionary[lang][key];
+                }
+            });
+
+            // Regenerar píldoras de skills
+            generateSkillPills(lang);
+
+            // Estilar botones de idioma
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'es') {
+                btnEs.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEn.className = "text-sm font-normal text-gray-400 hover:text-interactivo focus:outline-none";
+            } else {
+                btnEn.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEs.className = "text-sm font-normal text-gray-400 hover:text-interactivo focus:outline-none";
+            }
+        }
+    </script>
+</body>
+</html>

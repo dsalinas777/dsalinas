@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Oferta Formativa y Certificaciones | D Salinas</title>
+        <meta
+            name="description"
+            content="Programas de preparación de alto rendimiento en gestión de proyectos (PMP), gobierno TI (ITIL) y normativas internacionales (ISO)."
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            href="assets/favicon_oficial.ico"
+            type="image/x-icon"
+        />
+
+        <!-- Tipografías -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Iconos -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            corporativo: "#0C4A6E",
+                            interactivo: "#0284C7",
+                            acento: "#0EA5E9",
+                            fondoclaro: "#F0F9FF",
+                            textobase: "#1F2937",
+                        },
+                        fontFamily: {
+                            zilla: ['"Zilla Slab"', "serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #f9fafb;
+                color: #1f2937;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            .font-zilla {
+                font-family: '"Zilla Slab"', serif;
+            }
+
+            /* Navbar Glass */
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            /* Card Hover Effects */
+            .course-card {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .course-card:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 20px 25px -5px rgba(12, 74, 110, 0.1),
+                    0 10px 10px -5px rgba(12, 74, 110, 0.04);
+                border-color: #e0f2fe;
+            }
+            .course-icon-box {
+                transition: all 0.3s ease;
+            }
+            .course-card:hover .course-icon-box {
+                background-color: #0284c7;
+                color: white;
+            }
+
+            #mobile-menu {
+                display: none;
+            }
+            #mobile-menu.active {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body class="relative min-h-screen flex flex-col">
+        <header
+            class="fixed w-full top-0 z-50 glass-nav transition-all duration-300"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <a
+                        href="index.html"
+                        class="flex-shrink-0 flex items-center cursor-pointer transition-transform hover:scale-105"
+                    >
+                        <img
+                            class="h-10 w-auto md:hidden"
+                            src="assets/isotipo_oficial.png"
+                            alt="D Salinas Isotipo"
+                        />
+                        <img
+                            class="h-12 w-auto hidden md:block"
+                            src="assets/logotipo.png"
+                            alt="D Salinas Logotipo"
+                        />
+                    </a>
+
+                    <!-- Enlaces Desktop -->
+                    <nav class="hidden md:flex space-x-8 items-center">
+                        <a
+                            href="index.html#sobre-mi"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_about"
+                            >Sobre mí</a
+                        >
+                        <a
+                            href="formacion.html"
+                            class="text-interactivo font-medium transition-colors border-b-2 border-interactivo pb-1"
+                            data-i18n="nav_training"
+                            >Fórmate conmigo</a
+                        >
+                        <a
+                            href="index.html#contenido"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_content"
+                            >Contenido</a
+                        >
+                        <a
+                            href="contacto.html"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_contact"
+                            >Contáctame</a
+                        >
+
+                        <!-- Selector de Idioma -->
+                        <div
+                            class="flex items-center space-x-2 bg-fondoclaro px-3 py-1 rounded-full border border-gray-200"
+                        >
+                            <button
+                                onclick="changeLanguage('es')"
+                                id="btn-es"
+                                class="text-sm font-bold text-corporativo focus:outline-none"
+                            >
+                                ES
+                            </button>
+                            <span class="text-gray-300">|</span>
+                            <button
+                                onclick="changeLanguage('en')"
+                                id="btn-en"
+                                class="text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none"
+                            >
+                                EN
+                            </button>
+                        </div>
+                    </nav>
+
+                    <!-- Botón Menú Móvil -->
+                    <div class="md:hidden flex items-center space-x-4">
+                        <div
+                            class="flex items-center space-x-2 bg-fondoclaro px-2 py-1 rounded-full border border-gray-200"
+                        >
+                            <button
+                                onclick="changeLanguage('es')"
+                                id="btn-es-mob"
+                                class="text-xs font-bold text-corporativo"
+                            >
+                                ES
+                            </button>
+                            <span class="text-gray-300 text-xs">|</span>
+                            <button
+                                onclick="changeLanguage('en')"
+                                id="btn-en-mob"
+                                class="text-xs font-normal text-gray-500"
+                            >
+                                EN
+                            </button>
+                        </div>
+                        <button
+                            id="mobile-menu-btn"
+                            class="text-textobase hover:text-interactivo focus:outline-none"
+                        >
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú Móvil Desplegable -->
+            <div
+                id="mobile-menu"
+                class="md:hidden flex-col bg-white border-t border-gray-100 absolute w-full shadow-lg pb-4 px-4"
+            >
+                <a
+                    href="index.html#sobre-mi"
+                    class="block py-3 text-textobase font-medium border-b border-gray-50"
+                    data-i18n="nav_about"
+                    >Sobre mí</a
+                >
+                <a
+                    href="formacion.html"
+                    class="block py-3 text-interactivo font-medium border-b border-gray-50"
+                    data-i18n="nav_training"
+                    >Fórmate conmigo</a
+                >
+                <a
+                    href="index.html#contenido"
+                    class="block py-3 text-textobase font-medium border-b border-gray-50"
+                    data-i18n="nav_content"
+                    >Contenido</a
+                >
+                <a
+                    href="contacto.html"
+                    class="block py-3 text-textobase font-medium"
+                    data-i18n="nav_contact"
+                    >Contáctame</a
+                >
+            </div>
+        </header>
+
+        <main class="flex-grow pt-24 pb-12">
+            <!-- Hero Section Formación -->
+            <section class="bg-white border-b border-gray-200 py-16 lg:py-24">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div
+                        class="inline-flex items-center justify-center bg-fondoclaro text-interactivo px-4 py-2 rounded-full font-semibold text-sm border border-blue-100 tracking-wide uppercase mb-6 shadow-sm"
+                    >
+                        <i class="fas fa-chalkboard-teacher mr-2"></i>
+                        <span data-i18n="hero_tag">Training Center</span>
+                    </div>
+                    <h1
+                        class="text-4xl lg:text-6xl font-zilla font-bold text-corporativo mb-6 leading-tight"
+                        data-i18n="hero_title"
+                    >
+                        Certificaciones Oficiales: Impulsa tu Valor de Mercado y
+                        Lidera el Sector IT
+                    </h1>
+                    <p
+                        class="text-lg text-gray-600 leading-relaxed"
+                        data-i18n="hero_desc"
+                    >
+                        Programas de preparación de alto rendimiento diseñados
+                        para profesionales que buscan dominar los marcos
+                        metodológicos más demandados globalmente. Aprende con un
+                        método práctico, optimiza tu tiempo de estudio y asegura
+                        tu aprobado.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Bloque A: Dirección de Proyectos -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div
+                            class="w-12 h-12 bg-corporativo rounded-xl flex items-center justify-center text-white text-xl shadow-md"
+                        >
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h2
+                            class="text-2xl font-zilla font-bold text-corporativo tracking-wide uppercase"
+                            data-i18n="block_a_title"
+                        >
+                            Dirección de Proyectos (Marcos PMI)
+                        </h2>
+                        <div
+                            class="flex-grow h-px bg-gray-200 hidden sm:block"
+                        ></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Curso PMP -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box"
+                                >
+                                    <i class="fas fa-chart-gantt"></i>
+                                </div>
+                                <span
+                                    class="bg-blue-50 text-interactivo text-xs font-bold px-3 py-1 rounded-md border border-blue-100"
+                                    >Gold Standard</span
+                                >
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                Certificación PMP®
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                Project Management Professional
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_pmp_focus"
+                                >
+                                    La certificación líder y más valorada a
+                                    nivel mundial para directores de proyectos.
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_pmp_achieve"
+                                >
+                                    Dominarás la gestión integral de proyectos
+                                    complejos (presupuestos, riesgos, equipos y
+                                    metodologías ágiles/híbridas), multiplicando
+                                    tus opciones de acceder a puestos de alta
+                                    dirección y optimizando los plazos de
+                                    entrega.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Ver detalles y reservar plaza</span
+                                >
+                            </a>
+                        </div>
+
+                        <!-- Curso CAPM -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box"
+                                >
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <span
+                                    class="bg-gray-50 text-gray-600 text-xs font-bold px-3 py-1 rounded-md border border-gray-200"
+                                    >Entry Level</span
+                                >
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                Certificación CAPM®
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                Certified Associate in Project Management
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_capm_focus"
+                                >
+                                    El aval definitivo del PMI para
+                                    profesionales que desean consolidar sus
+                                    bases en gestión.
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_capm_achieve"
+                                >
+                                    Adquirirás el lenguaje técnico, la
+                                    estructura y el conocimiento fundamental del
+                                    estándar PMBOK®. Es el trampolín perfecto si
+                                    buscas reorientar tu carrera técnica hacia
+                                    roles de gestión o coordinar tus primeros
+                                    equipos con control absoluto.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Ver detalles y reservar plaza</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque B: Gobierno y Gestión TI -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div
+                            class="w-12 h-12 bg-interactivo rounded-xl flex items-center justify-center text-white text-xl shadow-md"
+                        >
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h2
+                            class="text-2xl font-zilla font-bold text-corporativo tracking-wide uppercase"
+                            data-i18n="block_b_title"
+                        >
+                            Gobierno y Gestión de Servicios TI
+                        </h2>
+                        <div
+                            class="flex-grow h-px bg-gray-200 hidden sm:block"
+                        ></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Curso ITIL -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box"
+                                >
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <span
+                                    class="bg-purple-50 text-purple-700 text-xs font-bold px-3 py-1 rounded-md border border-purple-100"
+                                    >Core Standard</span
+                                >
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                Certificación ITIL® v4 Foundation
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                IT Service Management
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_itil_focus"
+                                >
+                                    El marco de referencia global indispensable
+                                    para la Gestión de Servicios de TI (ITSM).
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_itil_achieve"
+                                >
+                                    Aprenderás a alinear la infraestructura
+                                    tecnológica directamente con la entrega de
+                                    valor al negocio. Sabrás cómo estructurar un
+                                    Help Desk moderno, reducir incidencias de
+                                    forma sistemática y gestionar el ciclo de
+                                    vida de los servicios informáticos bajo
+                                    estándares de clase mundial.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Ver detalles y reservar plaza</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque C: Estandarización ISO -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div
+                            class="w-12 h-12 bg-acento rounded-xl flex items-center justify-center text-white text-xl shadow-md"
+                        >
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h2
+                            class="text-2xl font-zilla font-bold text-corporativo tracking-wide uppercase"
+                            data-i18n="block_c_title"
+                        >
+                            Estandarización Internacional (Gobernanza ISO)
+                        </h2>
+                        <div
+                            class="flex-grow h-px bg-gray-200 hidden sm:block"
+                        ></div>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        <!-- Curso ISO 27001 -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div
+                                class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box mb-4"
+                            >
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                ISO/IEC 27001
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                Seguridad de la Información
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_27k_focus"
+                                >
+                                    El estándar internacional que define cómo
+                                    auditar, implementar y gestionar la
+                                    ciberseguridad corporativa.
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_27k_achieve"
+                                >
+                                    Te capacitarás para diseñar e implantar un
+                                    Sistema de Gestión de Seguridad de la
+                                    Información (SGSI). Serás el profesional
+                                    clave que blinde los activos de la empresa,
+                                    controle los riesgos informáticos y prepare
+                                    la infraestructura para superar auditorías
+                                    oficiales con éxito.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Reservar plaza</span
+                                >
+                            </a>
+                        </div>
+
+                        <!-- Curso ISO 9001 -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div
+                                class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box mb-4"
+                            >
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                ISO 9001
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                Gestión de la Calidad
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_9k_focus"
+                                >
+                                    La norma global para la estandarización y
+                                    optimización continua de procesos
+                                    operativos.
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_9k_achieve"
+                                >
+                                    Aprenderás a estructurar flujos de trabajo
+                                    eficientes, eliminar redundancias operativas
+                                    y medir el rendimiento técnico mediante KPIs
+                                    claros. Te convertirás en el consultor que
+                                    transforma el caos operativo en un sistema
+                                    predecible y escalable.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Reservar plaza</span
+                                >
+                            </a>
+                        </div>
+
+                        <!-- Curso ISO 10001 -->
+                        <div
+                            class="bg-white rounded-2xl p-8 border border-gray-200 course-card flex flex-col"
+                        >
+                            <div
+                                class="w-14 h-14 bg-fondoclaro text-interactivo rounded-full flex items-center justify-center text-2xl course-icon-box mb-4"
+                            >
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-textobase mb-2"
+                            >
+                                ISO 10001
+                            </h3>
+                            <p
+                                class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-4"
+                            >
+                                Satisfacción del Cliente
+                            </p>
+
+                            <div class="mb-6 flex-grow">
+                                <p
+                                    class="text-sm font-semibold text-interactivo mb-1"
+                                    data-i18n="lbl_focus"
+                                >
+                                    Enfoque:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm mb-4"
+                                    data-i18n="c_10k_focus"
+                                >
+                                    Directrices especializadas para la gestión
+                                    de la experiencia de usuario y atención
+                                    técnica de excelencia.
+                                </p>
+
+                                <p
+                                    class="text-sm font-semibold text-corporativo mb-1"
+                                    data-i18n="lbl_achieve"
+                                >
+                                    Lo que vas a lograr:
+                                </p>
+                                <p
+                                    class="text-gray-600 text-sm"
+                                    data-i18n="c_10k_achieve"
+                                >
+                                    Aprenderás a diseñar acuerdos de nivel de
+                                    servicio (SLAs) impecables y códigos de
+                                    conducta que blinden la relación con el
+                                    cliente. Ideal para managers de Service Desk
+                                    que buscan transformar el soporte técnico en
+                                    una ventaja competitiva de alta
+                                    fidelización.
+                                </p>
+                            </div>
+
+                            <a
+                                href="contacto.html"
+                                class="w-full text-center bg-transparent border-2 border-gray-200 hover:border-interactivo hover:text-interactivo text-textobase font-bold py-3 rounded-lg transition-colors mt-auto"
+                            >
+                                <span data-i18n="btn_reserve"
+                                    >Reservar plaza</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16 bg-gray-50 border-y border-gray-200 mb-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2
+                            class="text-3xl lg:text-4xl font-zilla font-bold text-corporativo mb-4"
+                            data-i18n="test_title"
+                        >
+                            Lo que dicen mis alumnos
+                        </h2>
+                        <div
+                            class="w-24 h-1 bg-acento mx-auto rounded-full"
+                        ></div>
+                    </div>
+
+                    <!-- Carrusel de Videos -->
+                    <div class="mb-16">
+                        <h3
+                            class="text-xl font-bold text-gray-700 mb-6 flex items-center"
+                        >
+                            <i class="fas fa-video text-acento mr-2"></i>
+                            <span data-i18n="test_vid_title"
+                                >Experiencias en Vídeo</span
+                            >
+                        </h3>
+                        <div
+                            class="flex overflow-x-auto pb-6 gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+                            style="scrollbar-width: none"
+                        >
+                            <!-- Video 1 -->
+                            <div class="flex-none w-72 sm:w-80 snap-center">
+                                <video
+                                    class="w-full h-48 bg-black rounded-2xl object-cover shadow-md"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="assets/movie/video1.mp4"
+                                        type="video/mp4"
+                                    />
+                                    Tu navegador no soporta el formato de vídeo.
+                                </video>
+                            </div>
+                            <!-- Video 2 -->
+                            <div class="flex-none w-72 sm:w-80 snap-center">
+                                <video
+                                    class="w-full h-48 bg-black rounded-2xl object-cover shadow-md"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="assets/movie/video2.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
+                            <!-- Video 3 -->
+                            <div class="flex-none w-72 sm:w-80 snap-center">
+                                <video
+                                    class="w-full h-48 bg-black rounded-2xl object-cover shadow-md"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="assets/movie/video3.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
+                            <!-- Video 4 -->
+                            <div class="flex-none w-72 sm:w-80 snap-center">
+                                <video
+                                    class="w-full h-48 bg-black rounded-2xl object-cover shadow-md"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source
+                                        src="assets/movie/video4.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carrusel de Imágenes/Reseñas -->
+                    <div>
+                        <h3
+                            class="text-xl font-bold text-gray-700 mb-6 flex items-center"
+                        >
+                            <i class="fas fa-comment-dots text-acento mr-2"></i>
+                            <span data-i18n="test_img_title"
+                                >Casos de Éxito y Reseñas</span
+                            >
+                        </h3>
+                        <div
+                            class="flex overflow-x-auto pb-6 gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+                            style="scrollbar-width: none"
+                        >
+                            <!-- Reseña 1 -->
+                            <div
+                                class="flex-none w-72 sm:w-80 snap-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col transition-transform hover:-translate-y-1"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <img
+                                        src="assets/testimonios/test1.jpg"
+                                        onerror="
+                                            this.src =
+                                                'https://placehold.co/100x100/0284C7/FFF?text=User'
+                                        "
+                                        alt="Testimonio 1"
+                                        class="w-14 h-14 rounded-full object-cover border-2 border-fondoclaro shadow-sm"
+                                    />
+                                    <div class="ml-4">
+                                        <h4
+                                            class="font-bold text-textobase text-sm"
+                                        >
+                                            Carlos M.
+                                        </h4>
+                                        <div
+                                            class="flex text-yellow-400 text-xs"
+                                        >
+                                            <i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-gray-600 text-sm italic flex-grow"
+                                >
+                                    "Gracias a la formación pude certificarme
+                                    como PMP a la primera. El método de
+                                    flashcards es brutal y el simulador fue
+                                    clave para perder el miedo."
+                                </p>
+                            </div>
+
+                            <!-- Reseña 2 -->
+                            <div
+                                class="flex-none w-72 sm:w-80 snap-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col transition-transform hover:-translate-y-1"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <img
+                                        src="assets/testimonios/test2.jpg"
+                                        onerror="
+                                            this.src =
+                                                'https://placehold.co/100x100/0284C7/FFF?text=User'
+                                        "
+                                        alt="Testimonio 2"
+                                        class="w-14 h-14 rounded-full object-cover border-2 border-fondoclaro shadow-sm"
+                                    />
+                                    <div class="ml-4">
+                                        <h4
+                                            class="font-bold text-textobase text-sm"
+                                        >
+                                            Laura P.
+                                        </h4>
+                                        <div
+                                            class="flex text-yellow-400 text-xs"
+                                        >
+                                            <i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-gray-600 text-sm italic flex-grow"
+                                >
+                                    "El acompañamiento de Deivis fue clave.
+                                    Pasar de un rol puramente técnico a liderar
+                                    infraestructuras IT era mi meta y lo
+                                    logramos en tiempo récord."
+                                </p>
+                            </div>
+
+                            <!-- Reseña 3 -->
+                            <div
+                                class="flex-none w-72 sm:w-80 snap-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col transition-transform hover:-translate-y-1"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <img
+                                        src="assets/testimonios/test3.jpg"
+                                        onerror="
+                                            this.src =
+                                                'https://placehold.co/100x100/0284C7/FFF?text=User'
+                                        "
+                                        alt="Testimonio 3"
+                                        class="w-14 h-14 rounded-full object-cover border-2 border-fondoclaro shadow-sm"
+                                    />
+                                    <div class="ml-4">
+                                        <h4
+                                            class="font-bold text-textobase text-sm"
+                                        >
+                                            Javier G.
+                                        </h4>
+                                        <div
+                                            class="flex text-yellow-400 text-xs"
+                                        >
+                                            <i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-gray-600 text-sm italic flex-grow"
+                                >
+                                    "La metodología súper práctica sobre ISO
+                                    27001 me permitió auditar y preparar mi
+                                    empresa para la normativa con una seguridad
+                                    increíble."
+                                </p>
+                            </div>
+
+                            <!-- Reseña 4 -->
+                            <div
+                                class="flex-none w-72 sm:w-80 snap-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col transition-transform hover:-translate-y-1"
+                            >
+                                <div class="flex items-center mb-4">
+                                    <img
+                                        src="assets/testimonios/test4.jpg"
+                                        onerror="
+                                            this.src =
+                                                'https://placehold.co/100x100/0284C7/FFF?text=User'
+                                        "
+                                        alt="Testimonio 4"
+                                        class="w-14 h-14 rounded-full object-cover border-2 border-fondoclaro shadow-sm"
+                                    />
+                                    <div class="ml-4">
+                                        <h4
+                                            class="font-bold text-textobase text-sm"
+                                        >
+                                            Elena R.
+                                        </h4>
+                                        <div
+                                            class="flex text-yellow-400 text-xs"
+                                        >
+                                            <i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i
+                                            ><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-gray-600 text-sm italic flex-grow"
+                                >
+                                    "Totalmente recomendado. Es un antes y un
+                                    después en la forma de estudiar ITIL v4. No
+                                    se siente como teoría aburrida, todo se
+                                    aplica al mundo real."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel de Garantía y Cierre -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
+                <div
+                    class="bg-corporativo rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+                >
+                    <!-- Zona Garantía -->
+                    <div
+                        class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center border-b md:border-b-0 md:border-r border-blue-900"
+                    >
+                        <div class="flex items-center gap-3 mb-4">
+                            <i
+                                class="fas fa-lightbulb text-yellow-400 text-2xl"
+                            ></i>
+                            <h3
+                                class="text-2xl font-zilla font-bold text-white"
+                                data-i18n="trust_title"
+                            >
+                                Nota del Consultor
+                            </h3>
+                        </div>
+                        <p
+                            class="text-blue-100 leading-relaxed"
+                            data-i18n="trust_desc"
+                        >
+                            Todos los programas incluyen acceso a simuladores
+                            con bancos de preguntas actualizados, metodologías
+                            de estudio acelerado mediante flashcards y soporte
+                            directo para resolver tus dudas antes del examen
+                            oficial.
+                        </p>
+                    </div>
+                    <!-- Zona B2B / In-Company -->
+                    <div
+                        class="bg-[#0A3954] p-8 md:p-12 md:w-1/2 flex flex-col justify-center items-start"
+                    >
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fas fa-building text-acento text-2xl"></i>
+                            <h3
+                                class="text-xl font-zilla font-bold text-white"
+                                data-i18n="b2b_title"
+                            >
+                                ¿Buscas capacitación para tu negocio?
+                            </h3>
+                        </div>
+                        <p
+                            class="text-blue-200 text-sm leading-relaxed mb-6"
+                            data-i18n="b2b_desc"
+                        >
+                            Si eres responsable de RRHH o Director de Tecnología
+                            y necesitas certificar a varios miembros de tu
+                            organización, disponemos de planes corporativos
+                            adaptados.
+                        </p>
+                        <a
+                            href="contacto-b2b.html"
+                            class="inline-flex items-center bg-acento hover:bg-interactivo text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md"
+                        >
+                            <span data-i18n="b2b_btn"
+                                >Contactar para Formación In-Company</span
+                            >
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-auto">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+            >
+                <div class="flex items-center space-x-2">
+                    <img
+                        src="assets/isotipo_oficial.png"
+                        alt="Logo"
+                        class="h-6 w-auto grayscale opacity-60"
+                    />
+                    <span class="text-sm text-gray-500"
+                        >© 2026 D Salinas.
+                        <span data-i18n="footer_rights"
+                            >Todos los derechos reservados.</span
+                        ></span
+                    >
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a
+                        href="terminos-condiciones.html"
+                        class="hover:text-corporativo"
+                        data-i18n="footer_terms"
+                        >Términos y Condiciones</a
+                    >
+                    <a
+                        href="politica-privacidad.html"
+                        class="hover:text-corporativo"
+                        data-i18n="footer_privacy"
+                        >Política de Privacidad</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+            });
+
+            // Diccionario Dinámico de Idiomas (ES/EN)
+            const dictionary = {
+                es: {
+                    nav_about: "Sobre mí",
+                    nav_training: "Fórmate conmigo",
+                    nav_content: "Contenido",
+                    nav_contact: "Contáctame",
+
+                    hero_tag: "Training Center",
+                    hero_title:
+                        "Certificaciones Oficiales: Impulsa tu Valor de Mercado y Lidera el Sector IT",
+                    hero_desc:
+                        "Programas de preparación de alto rendimiento diseñados para profesionales que buscan dominar los marcos metodológicos más demandados globalmente. Aprende con un método práctico, optimiza tu tiempo de estudio y asegura tu aprobado.",
+
+                    block_a_title: "Dirección de Proyectos (Marcos PMI)",
+                    block_b_title: "Gobierno y Gestión de Servicios TI",
+                    block_c_title:
+                        "Estandarización Internacional (Gobernanza ISO)",
+
+                    lbl_focus: "Enfoque:",
+                    lbl_achieve: "Lo que vas a lograr:",
+                    btn_reserve: "Ver detalles y reservar plaza",
+
+                    c_pmp_focus:
+                        "La certificación líder y más valorada a nivel mundial para directores de proyectos.",
+                    c_pmp_achieve:
+                        "Dominarás la gestión integral de proyectos complejos (presupuestos, riesgos, equipos y metodologías ágiles/híbridas), multiplicando tus opciones de acceder a puestos de alta dirección y optimizando los plazos de entrega.",
+
+                    c_capm_focus:
+                        "El aval definitivo del PMI para profesionales que desean consolidar sus bases en gestión.",
+                    c_capm_achieve:
+                        "Adquirirás el lenguaje técnico, la estructura y el conocimiento fundamental del estándar PMBOK®. Es el trampolín perfecto si buscas reorientar tu carrera técnica hacia roles de gestión o coordinar tus primeros equipos con control absoluto.",
+
+                    c_itil_focus:
+                        "El marco de referencia global indispensable para la Gestión de Servicios de TI (ITSM).",
+                    c_itil_achieve:
+                        "Aprenderás a alinear la infraestructura tecnológica directamente con la entrega de valor al negocio. Sabrás cómo estructurar un Help Desk moderno, reducir incidencias de forma sistemática y gestionar el ciclo de vida de los servicios informáticos bajo estándares de clase mundial.",
+
+                    c_27k_focus:
+                        "El estándar internacional que define cómo auditar, implementar y gestionar la ciberseguridad corporativa.",
+                    c_27k_achieve:
+                        "Te capacitarás para diseñar e implantar un Sistema de Gestión de Seguridad de la Información (SGSI). Serás el profesional clave que blinde los activos de la empresa, controle los riesgos informáticos y prepare la infraestructura para superar auditorías oficiales con éxito.",
+
+                    c_9k_focus:
+                        "La norma global para la estandarización y optimización continua de procesos operativos.",
+                    c_9k_achieve:
+                        "Aprenderás a estructurar flujos de trabajo eficientes, eliminar redundancias operativas y medir el rendimiento técnico mediante KPIs claros. Te convertirás en el consultor que transforma el caos operativo en un sistema predecible y escalable.",
+
+                    c_10k_focus:
+                        "Directrices especializadas para la gestión de la experiencia de usuario y atención técnica de excelencia.",
+                    c_10k_achieve:
+                        "Aprenderás a diseñar acuerdos de nivel de servicio (SLAs) impecables y códigos de conducta que blinden la relación con el cliente. Ideal para managers de Service Desk que buscan transformar el soporte técnico en una ventaja competitiva de alta fidelización.",
+
+                    test_title: "Lo que dicen mis alumnos",
+                    test_vid_title: "Experiencias en Vídeo",
+                    test_img_title: "Casos de Éxito y Reseñas",
+
+                    trust_title: "Nota del Consultor",
+                    trust_desc:
+                        "Todos los programas incluyen acceso a simuladores con bancos de preguntas actualizados, metodologías de estudio acelerado mediante flashcards y soporte directo para resolver tus dudas antes del examen oficial.",
+                    b2b_title: "¿Buscas capacitación para tu negocio?",
+                    b2b_desc:
+                        "Si eres responsable de RRHH o Director de Tecnología y necesitas certificar a varios miembros de tu organización, disponemos de planes corporativos adaptados.",
+                    b2b_btn: "Contactar para Formación In-Company",
+
+                    footer_rights: "Todos los derechos reservados.",
+                    footer_terms: "Términos y Condiciones",
+                    footer_privacy: "Política de Privacidad",
+                },
+                en: {
+                    nav_about: "About Me",
+                    nav_training: "Train with me",
+                    nav_content: "Content",
+                    nav_contact: "Contact Me",
+
+                    hero_tag: "Training Center",
+                    hero_title:
+                        "Official Certifications: Boost Your Market Value and Lead the IT Sector",
+                    hero_desc:
+                        "High-performance preparation programs designed for professionals looking to master the most globally demanded methodological frameworks. Learn with a practical method, optimize your study time, and secure your passing score.",
+
+                    block_a_title: "Project Management (PMI Frameworks)",
+                    block_b_title: "IT Governance & Service Management",
+                    block_c_title: "International Standardization (ISO Norms)",
+
+                    lbl_focus: "Focus:",
+                    lbl_achieve: "What you will achieve:",
+                    btn_reserve: "View details and book a spot",
+
+                    c_pmp_focus:
+                        "The leading and most globally valued certification for project managers.",
+                    c_pmp_achieve:
+                        "You will master the comprehensive management of complex projects (budgets, risks, teams, and agile/hybrid methodologies), multiplying your chances to access senior management positions and optimizing delivery times.",
+
+                    c_capm_focus:
+                        "The definitive PMI endorsement for professionals looking to consolidate their management foundations.",
+                    c_capm_achieve:
+                        "You will acquire the technical language, structure, and fundamental knowledge of the PMBOK® standard. It is the perfect stepping stone if you want to redirect your tech career towards management roles or coordinate your first teams with absolute control.",
+
+                    c_itil_focus:
+                        "The indispensable global framework for IT Service Management (ITSM).",
+                    c_itil_achieve:
+                        "You will learn to align technological infrastructure directly with business value delivery. You will know how to structure a modern Help Desk, systematically reduce incidents, and manage the lifecycle of IT services under world-class standards.",
+
+                    c_27k_focus:
+                        "The international standard that defines how to audit, implement, and manage corporate cybersecurity.",
+                    c_27k_achieve:
+                        "You will be trained to design and implement an Information Security Management System (ISMS). You will become the key professional who secures company assets, controls IT risks, and prepares the infrastructure to successfully pass official audits.",
+
+                    c_9k_focus:
+                        "The global norm for standardization and continuous optimization of operational processes.",
+                    c_9k_achieve:
+                        "You will learn to structure efficient workflows, eliminate operational redundancies, and measure technical performance using clear KPIs. You will become the consultant who transforms operational chaos into a predictable and scalable system.",
+
+                    c_10k_focus:
+                        "Specialized guidelines for user experience management and technical support excellence.",
+                    c_10k_achieve:
+                        "You will learn to design flawless Service Level Agreements (SLAs) and codes of conduct that secure customer relationships. Ideal for Service Desk managers looking to transform technical support into a high-loyalty competitive advantage.",
+
+                    test_title: "What my students say",
+                    test_vid_title: "Video Experiences",
+                    test_img_title: "Success Stories & Reviews",
+
+                    trust_title: "Consultant's Note",
+                    trust_desc:
+                        "All programs include access to simulators with updated question banks, accelerated study methodologies using flashcards, and direct support to resolve your doubts before the official exam.",
+                    b2b_title: "Looking for corporate training?",
+                    b2b_desc:
+                        "If you are an HR Manager or CTO and need to certify several members of your organization, we offer customized corporate plans.",
+                    b2b_btn: "Contact for In-Company Training",
+
+                    footer_rights: "All rights reserved.",
+                    footer_terms: "Terms & Conditions",
+                    footer_privacy: "Privacy Policy",
+                },
+            };
+
+            function changeLanguage(lang) {
+                document.querySelectorAll("[data-i18n]").forEach((element) => {
+                    const key = element.getAttribute("data-i18n");
+                    if (dictionary[lang][key]) {
+                        element.innerHTML = dictionary[lang][key];
+                    }
+                });
+
+                const btnEs = document.getElementById("btn-es");
+                const btnEn = document.getElementById("btn-en");
+                const btnEsMob = document.getElementById("btn-es-mob");
+                const btnEnMob = document.getElementById("btn-en-mob");
+
+                if (lang === "es") {
+                    btnEs.className =
+                        "text-sm font-bold text-corporativo focus:outline-none";
+                    btnEn.className =
+                        "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+                    btnEsMob.className =
+                        "text-xs font-bold text-corporativo focus:outline-none";
+                    btnEnMob.className =
+                        "text-xs font-normal text-gray-500 focus:outline-none";
+                } else {
+                    btnEn.className =
+                        "text-sm font-bold text-corporativo focus:outline-none";
+                    btnEs.className =
+                        "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+                    btnEnMob.className =
+                        "text-xs font-bold text-corporativo focus:outline-none";
+                    btnEsMob.className =
+                        "text-xs font-normal text-gray-500 focus:outline-none";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad | D Salinas</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon_oficial.ico" type="image/x-icon">
+
+    <!-- Tipografías Oficiales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporativo: '#0C4A6E',
+                        interactivo: '#0284C7',
+                        acento: '#0EA5E9',
+                        fondoclaro: '#F0F9FF',
+                        textobase: '#1F2937'
+                    },
+                    fontFamily: {
+                        zilla: ['"Zilla Slab"', 'serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2937; }
+        h1, h2, h3, h4, h5, h6, .font-zilla { font-family: '"Zilla Slab"', serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        #mobile-menu { display: none; }
+        #mobile-menu.active { display: flex; }
+        
+        /* Estilos específicos para la legibilidad del texto legal */
+        .legal-content p { margin-bottom: 1.25rem; line-height: 1.75; color: #4B5563; }
+        .legal-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc; color: #4B5563; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        .legal-content h2 { font-family: '"Zilla Slab"', serif; font-size: 1.5rem; font-weight: 700; color: #0C4A6E; margin-top: 2.5rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- ================= NAVEGACIÓN STICKY ================= -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo (Enlace modificado para volver al index) -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer transition-transform hover:scale-105">
+                    <img class="h-10 w-auto md:hidden" src="assets/isotipo_oficial.png" alt="D Salinas Isotipo">
+                    <img class="h-12 w-auto hidden md:block" src="assets/logotipo.png" alt="D Salinas Logotipo">
+                </a>
+                
+                <!-- Enlaces Desktop (Apuntan al index.html) -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#sobre-mi" class="text-textobase hover:text-interactivo font-medium transition-colors" data-i18n="nav_about">Sobre mí</a>
+                    <a href="index.html#formacion" class="text-textobase hover:text-interactivo font-medium transition-colors" data-i18n="nav_training">Fórmate conmigo</a>
+                    <a href="index.html#contenido" class="text-textobase hover:text-interactivo font-medium transition-colors" data-i18n="nav_content">Contenido</a>
+                    <a href="index.html#contacto" class="text-textobase hover:text-interactivo font-medium transition-colors" data-i18n="nav_contact">Contáctame</a>
+                    
+                    <div class="flex items-center space-x-2 bg-fondoclaro px-3 py-1 rounded-full border border-gray-200">
+                        <button onclick="changeLanguage('es')" id="btn-es" class="text-sm font-bold text-corporativo focus:outline-none">ES</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="changeLanguage('en')" id="btn-en" class="text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none">EN</button>
+                    </div>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="mobile-menu-btn" class="text-textobase hover:text-interactivo focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="md:hidden flex-col bg-white border-t border-gray-100 absolute w-full shadow-lg pb-4 px-4">
+            <a href="index.html#sobre-mi" class="block py-3 text-textobase font-medium border-b border-gray-50" data-i18n="nav_about">Sobre mí</a>
+            <a href="index.html#formacion" class="block py-3 text-textobase font-medium border-b border-gray-50" data-i18n="nav_training">Fórmate conmigo</a>
+            <a href="index.html#contenido" class="block py-3 text-textobase font-medium border-b border-gray-50" data-i18n="nav_content">Contenido</a>
+            <a href="index.html#contacto" class="block py-3 text-textobase font-medium" data-i18n="nav_contact">Contáctame</a>
+        </div>
+    </header>
+
+    <!-- ================= CONTENIDO LEGAL ================= -->
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <!-- Cabecera de la página -->
+        <div class="mb-12 border-b border-gray-200 pb-8 text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-zilla font-bold text-corporativo mb-4">Política de Privacidad</h1>
+            <p class="text-sm text-gray-500 bg-fondoclaro inline-block px-4 py-2 rounded-lg font-medium border border-blue-100">
+                <i class="far fa-calendar-alt mr-2"></i> Última actualización: 27 de junio de 2026
+            </p>
+        </div>
+
+        <!-- Cuerpo del texto (con estilos específicos 'legal-content') -->
+        <div class="legal-content">
+            <p>En <strong>Deivis Alexander Salinas Paniagua</strong> (en adelante, "D Salinas" o "el Sitio Web"), nos tomamos muy en serio la privacidad de tus datos. A continuación, te explicamos de forma transparente cómo recopilamos, utilizamos y protegemos la información de los usuarios que visitan y utilizan nuestro sitio web.</p>
+
+            <h2>1. Responsable del Tratamiento de los Datos</h2>
+            <ul>
+                <li><strong>Responsable:</strong> Deivis Alexander Salinas Paniagua</li>
+                <li><strong>Nombre Comercial:</strong> D Salinas</li>
+                <li><strong>Ubicación:</strong> Barcelona, España</li>
+                <li><strong>Email de Contacto:</strong> <a href="mailto:Me@dsalinas.com" class="text-interactivo hover:underline">Me@dsalinas.com</a></li>
+            </ul>
+
+            <h2>2. Datos que Recopilamos y Finalidad</h2>
+            <p>Dependiendo de cómo interactúes con la web, podemos recopilar los siguientes datos:</p>
+            <ul>
+                <li><strong>Formularios de Contacto / Suscripción:</strong> Nombre, dirección de correo electrónico y cualquier dato que decidas incluir en el mensaje.
+                    <br><span class="text-sm text-gray-500 mt-1 block"><strong>Finalidad:</strong> Responder a tus consultas, gestionar solicitudes de información o enviarte actualizaciones, newsletters y contenidos relacionados con la gestión de proyectos (PMP), liderazgo e informática si te has suscrito de forma voluntaria.</span>
+                </li>
+                <li class="mt-4"><strong>Datos de Navegación (Cookies):</strong> Dirección IP, datos de ubicación aproximada, tipo de navegador y páginas visitadas.
+                    <br><span class="text-sm text-gray-500 mt-1 block"><strong>Finalidad:</strong> Analizar el rendimiento de la web, mejorar la experiencia de usuario y garantizar la seguridad del sitio.</span>
+                </li>
+            </ul>
+
+            <h2>3. Base Legal para el Tratamiento</h2>
+            <p>Tratamos tus datos bajo las siguientes bases legales:</p>
+            <ul>
+                <li><strong>El consentimiento explícito:</strong> Al rellenar un formulario o aceptar el uso de cookies, nos das tu autorización expresa para tratar tus datos con las finalidades indicadas.</li>
+                <li><strong>Interés legítimo:</strong> Para garantizar el correcto funcionamiento técnico de la web y su seguridad.</li>
+            </ul>
+
+            <h2>4. Plazo de Conservación de los Datos</h2>
+            <p>Conservaremos tus datos personales únicamente durante el tiempo necesario para cumplir con la finalidad para la que fueron recabados, o hasta que solicites su supresión o revoques tu consentimiento.</p>
+
+            <h2>5. Destinatarios y Transferencia de Datos</h2>
+            <p>No vendemos, alquilamos ni cedemos tus datos personales a terceros bajo ningún concepto. Sin embargo, utilizamos herramientas de terceros necesarias para la infraestructura de la web que operan bajo sus propias políticas de privacidad, tales como:</p>
+            <ul>
+                <li><strong>Alojamiento Web:</strong> GitHub Pages (GitHub Inc.).</li>
+                <li><strong>Servicios de Analítica:</strong> (Por ejemplo, Google Analytics, si lo utilizas).</li>
+            </ul>
+
+            <h2>6. Tus Derechos (Derechos ARCO-POL)</h2>
+            <p>Como usuario, tienes pleno derecho a controlar tus datos personales. El RGPD te garantiza los siguientes derechos:</p>
+            <div class="bg-fondoclaro p-6 rounded-xl border border-blue-100 mb-6">
+                <ul class="mb-0">
+                    <li><strong>Acceso:</strong> Saber qué datos tenemos sobre ti.</li>
+                    <li><strong>Rectificación:</strong> Modificar los datos que sean incorrectos o estén incompletos.</li>
+                    <li><strong>Supresión (Olvido):</strong> Solicitar que eliminemos tus datos de nuestros registros.</li>
+                    <li><strong>Oposición y Limitación:</strong> Oponerte al tratamiento o solicitar que se limite el uso de tus datos.</li>
+                    <li><strong>Portabilidad:</strong> Solicitar la entrega de tus datos en un formato estructurado.</li>
+                </ul>
+            </div>
+            <p>Para ejercer cualquiera de estos derechos, puedes enviar un correo electrónico a <a href="mailto:Me@dsalinas.com" class="text-interactivo hover:underline font-medium">Me@dsalinas.com</a> adjuntando una copia de tu documento de identidad para verificar tu titularidad. Asimismo, si consideras que tus derechos han sido vulnerados, tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD).</p>
+
+            <h2>7. Enlaces a Terceros</h2>
+            <p>Este sitio web puede contener enlaces a otras plataformas o herramientas externas (como redes sociales o pasarelas de formación). Esta Política de Privacidad solo se aplica a nuestra web; no nos hacemos responsables de las políticas de privacidad de sitios externos.</p>
+
+            <h2>8. Cambios en la Política de Privacidad</h2>
+            <p>Nos reservamos el derecho a modificar esta política para adaptarla a novedades legislativas o jurisprudenciales. Te recomendamos revisar esta página periódicamente.</p>
+        </div>
+        
+        <div class="mt-12 text-center pt-8 border-t border-gray-100">
+            <a href="index.html" class="inline-flex items-center justify-center bg-corporativo hover:bg-interactivo text-white font-semibold py-3 px-6 rounded-lg transition-all shadow-md">
+                <i class="fas fa-arrow-left mr-2"></i> Volver a la página principal
+            </a>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-2">
+                <img src="assets/isotipo_oficial.png" alt="Logo" class="h-6 w-auto grayscale opacity-60">
+                <span class="text-sm text-gray-500">© 2026 D Salinas. <span data-i18n="footer_rights">Todos los derechos reservados.</span></span>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-corporativo">Aviso Legal</a>
+                <a href="politica-privacidad.html" class="text-corporativo font-semibold">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica Menú e Idiomas -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Diccionario base para los elementos compartidos (Nav / Footer)
+        const dictionary = {
+            es: {
+                nav_about: "Sobre mí",
+                nav_training: "Fórmate conmigo",
+                nav_content: "Contenido",
+                nav_contact: "Contáctame",
+                footer_rights: "Todos los derechos reservados."
+            },
+            en: {
+                nav_about: "About Me",
+                nav_training: "Train with me",
+                nav_content: "Content",
+                nav_contact: "Contact Me",
+                footer_rights: "All rights reserved."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (dictionary[lang] && dictionary[lang][key]) {
+                    element.innerHTML = dictionary[lang][key];
+                }
+            });
+
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'es') {
+                btnEs.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEn.className = "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+            } else {
+                btnEn.className = "text-sm font-bold text-corporativo focus:outline-none";
+                btnEs.className = "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+            }
+        }
+    </script>
+</body>
+</html>
