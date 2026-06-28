@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>D Salinas | Consultoría IT, Formacion.</title>
+        <meta
+            name="description"
+            content="Optimiza la infraestructura tecnológica de tu empresa y capacita a tus equipos técnicos con formación avanzada para certificaciones PMP, CAPM e ITIL."
+        />
+        <meta name="robots" content="index, follow" />
+
+        <link
+            rel="icon"
+            href="assets/favicon_oficial.ico"
+            type="image/x-icon"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            corporativo: "#0C4A6E",
+                            interactivo: "#0284C7",
+                            acento: "#0EA5E9",
+                            fondoclaro: "#F0F9FF",
+                            textobase: "#1F2937",
+                        },
+                        fontFamily: {
+                            zilla: ['"Zilla Slab"', "serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+                color: #1f2937;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .font-zilla {
+                font-family: '"Zilla Slab"', serif;
+            }
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            }
+            .hero-img-blob {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                box-shadow:
+                    0 20px 25px -5px rgba(12, 74, 110, 0.1),
+                    0 10px 10px -5px rgba(12, 74, 110, 0.04);
+            }
+            input[type="radio"]:checked + label {
+                border-color: #0284c7;
+                background-color: #f0f9ff;
+                color: #0c4a6e;
+                font-weight: 600;
+            }
+            #mobile-menu {
+                display: none;
+            }
+            #mobile-menu.active {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body class="bg-white antialiased overflow-x-hidden">
+        <header
+            class="fixed w-full top-0 z-50 glass-nav transition-all duration-300"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <div
+                        class="flex-shrink-0 flex items-center cursor-pointer"
+                        onclick="window.scrollTo(0, 0)"
+                    >
+                        <img
+                            class="h-10 w-auto md:hidden"
+                            src="assets/isotipo_oficial.png"
+                            alt="D Salinas Isotipo - Consultoría IT"
+                        />
+                        <img
+                            class="h-12 w-auto hidden md:block"
+                            src="assets/logotipo.png"
+                            alt="D Salinas Logotipo - Transformación Digital"
+                        />
+                    </div>
+
+                    <nav class="hidden md:flex space-x-8 items-center">
+                        <a
+                            href="#sobre-mi"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_about"
+                            >Sobre mí</a
+                        >
+                        <a
+                            href="#formacion"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_training"
+                            >Fórmate conmigo</a
+                        >
+                        <!--  <a
+                            href="#contenido"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_content"
+                            >Contenido</a
+                        > -->
+                        <a
+                            href="#contacto"
+                            class="text-textobase hover:text-interactivo font-medium transition-colors"
+                            data-i18n="nav_contact"
+                            >Contáctame</a
+                        >
+
+                        <div
+                            class="flex items-center space-x-2 bg-fondoclaro px-3 py-1 rounded-full border border-gray-200"
+                        >
+                            <button
+                                onclick="changeLanguage('es')"
+                                id="btn-es"
+                                class="text-sm font-bold text-corporativo focus:outline-none"
+                            >
+                                ES
+                            </button>
+                            <span class="text-gray-300">|</span>
+                            <button
+                                onclick="changeLanguage('en')"
+                                id="btn-en"
+                                class="text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none"
+                            >
+                                EN
+                            </button>
+                        </div>
+                    </nav>
+
+                    <div class="md:hidden flex items-center space-x-4">
+                        <div
+                            class="flex items-center space-x-2 bg-fondoclaro px-2 py-1 rounded-full border border-gray-200"
+                        >
+                            <button
+                                onclick="changeLanguage('es')"
+                                id="btn-es-mob"
+                                class="text-xs font-bold text-corporativo"
+                            >
+                                ES
+                            </button>
+                            <span class="text-gray-300 text-xs">|</span>
+                            <button
+                                onclick="changeLanguage('en')"
+                                id="btn-en-mob"
+                                class="text-xs font-normal text-gray-500"
+                            >
+                                EN
+                            </button>
+                        </div>
+                        <button
+                            id="mobile-menu-btn"
+                            class="text-textobase hover:text-interactivo focus:outline-none"
+                        >
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="mobile-menu"
+                class="md:hidden flex-col bg-white border-t border-gray-100 absolute w-full shadow-lg pb-4 px-4"
+            >
+                <a
+                    href="#sobre-mi"
+                    class="block py-3 text-textobase font-medium border-b border-gray-50"
+                    data-i18n="nav_about"
+                    >Sobre mí</a
+                >
+                <a
+                    href="#formacion"
+                    class="block py-3 text-textobase font-medium border-b border-gray-50"
+                    data-i18n="nav_training"
+                    >Fórmate conmigo</a
+                >
+                <a
+                    href="#contenido"
+                    class="block py-3 text-textobase font-medium border-b border-gray-50"
+                    data-i18n="nav_content"
+                    >Contenido</a
+                >
+                <a
+                    href="#contacto"
+                    class="block py-3 text-textobase font-medium"
+                    data-i18n="nav_contact"
+                    >Contáctame</a
+                >
+            </div>
+        </header>
+
+        <section
+            class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+        >
+            <div
+                class="flex flex-col lg:flex-row items-center justify-between gap-12"
+            >
+                <div
+                    class="w-full lg:w-1/2 flex flex-col items-start space-y-6"
+                >
+                    <span
+                        class="inline-block bg-fondoclaro text-interactivo px-4 py-2 rounded-full font-semibold text-sm border border-blue-100 tracking-wide uppercase shadow-sm"
+                        data-i18n="hero_tag"
+                    >
+                        Consultoría IT & Formación Técnica Especializada
+                    </span>
+
+                    <h1
+                        class="text-5xl lg:text-7xl font-zilla font-bold text-corporativo leading-tight"
+                    >
+                        <span data-i18n="hero_title_1"
+                            >Transformación Digital,</span
+                        ><br />
+                        <span class="text-interactivo" data-i18n="hero_title_2"
+                            >Consultoría IT</span
+                        ><br />
+                        <span data-i18n="hero_title_3"
+                            >y Certificaciones de Alto valor</span
+                        >
+                    </h1>
+
+                    <p
+                        class="text-lg text-gray-600 max-w-xl leading-relaxed"
+                        data-i18n="hero_desc"
+                    >
+                        gestionamos la transformación digital de tu
+                        negocio,integrando soluciones avanzadas desde la
+                        <strong
+                            >Infraestructura hasta la analítica de
+                            datos.</strong
+                        >
+                        Además
+                        <strong
+                            >preparamos a empresas y profesionales particulares
+                            para dominar el mercado con metodologías y
+                            certificaciones de validez internacional. (PMP®,
+                            CAPM®, ITIL®,ISO)</strong
+                        >. Estrategia corporativa y desarrollo profesional en un
+                        solo lugar.
+                    </p>
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto"
+                    >
+                        <a
+                            href="#contacto"
+                            class="flex items-center justify-center bg-corporativo hover:bg-interactivo text-white font-semibold py-3 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                        >
+                            <span data-i18n="hero_btn_hire"
+                                >Servicios de Consultoría IT | Contratame</span
+                            >
+                            <i class="fas fa-file-download ml-2"></i>
+                        </a>
+                        <a
+                            href="#formacion"
+                            class="flex items-center justify-center bg-white border-2 border-interactivo text-interactivo hover:bg-fondoclaro font-semibold py-3 px-6 rounded-lg transition-all"
+                        >
+                            <span data-i18n="hero_btn_train"
+                                >Ver Cursos y Certificaciones</span
+                            >
+                            <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
+                >
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-fondoclaro to-blue-50 rounded-full blur-2xl opacity-70 -z-10"
+                    ></div>
+                    <img
+                        src="assets/dsalinas-foto-principal.png"
+                        alt="Deivis Salinas - Consultor IT Manager y Formador PMP"
+                        class="w-full max-w-md object-cover border-4 border-white hero-img-blob z-10"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="sobre-mi"
+            class="bg-fondoclaro py-20 border-y border-gray-200"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-4xl font-zilla font-bold text-corporativo mb-4"
+                        data-i18n="about_title"
+                    >
+                        Sobre mí:
+                    </h2>
+                    <div class="w-24 h-1 bg-acento mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 flex flex-col items-start group"
+                    >
+                        <div
+                            class="w-14 h-14 bg-fondoclaro rounded-xl flex items-center justify-center text-interactivo text-2xl mb-6 group-hover:bg-interactivo group-hover:text-white transition-colors"
+                        >
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <span class="text-gray-400 font-bold text-sm mb-2"
+                            >01 /</span
+                        >
+                        <h3
+                            class="text-xl font-zilla font-bold text-textobase mb-3"
+                            data-i18n="about_card1_title"
+                        >
+                            Innovación y Sólida Base Tecnológica
+                        </h3>
+                        <p
+                            class="text-gray-600 text-sm leading-relaxed"
+                            data-i18n="about_card1_desc"
+                        >
+                            Inicié mi carrera en el sector de la programación y
+                            el desarrollo de software, lo que me otorgó una
+                            profunda comprensión lógica y analítica de los
+                            sistemas. Posteriormente, evolucioné hacia la
+                            administración de sistemas e infraestructura
+                            corporativa avanzada. Esta base me permite auditar,
+                            diseñar e implementar con absoluta solvencia técnica
+                            soluciones complejas que integran Big Data, entornos
+                            Cloud, seguridad y ecosistemas IoT.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 flex flex-col items-start group"
+                    >
+                        <div
+                            class="w-14 h-14 bg-fondoclaro rounded-xl flex items-center justify-center text-interactivo text-2xl mb-6 group-hover:bg-interactivo group-hover:text-white transition-colors"
+                        >
+                            <i class="fas fa-chess-knight"></i>
+                        </div>
+                        <span class="text-gray-400 font-bold text-sm mb-2"
+                            >02 /</span
+                        >
+                        <h3
+                            class="text-xl font-zilla font-bold text-textobase mb-3"
+                            data-i18n="about_card2_title"
+                        >
+                            Liderazgo Estratégico y Gobierno IT
+                        </h3>
+                        <p
+                            class="text-gray-600 text-sm leading-relaxed"
+                            data-i18n="about_card2_desc"
+                        >
+                            Como coordinador y manager, lidero la transformación
+                            digital integral de las organizaciones, asegurando
+                            que la tecnología responda directamente a los
+                            objetivos del negocio. Cuento con una dilatada
+                            experiencia gestionando proyectos complejos bajo
+                            estándares globales de gestión de proyectos y marcos
+                            de gobierno ITIL. Me especializo en coordinar
+                            equipos técnicos de alto rendimiento, estandarizar
+                            procesos operativos y garantizar el cumplimiento y
+                            la calidad mediante normativas internacionales ISO.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 flex flex-col items-start group"
+                    >
+                        <div
+                            class="w-14 h-14 bg-fondoclaro rounded-xl flex items-center justify-center text-interactivo text-2xl mb-6 group-hover:bg-interactivo group-hover:text-white transition-colors"
+                        >
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="text-gray-400 font-bold text-sm mb-2"
+                            >03 /</span
+                        >
+                        <h3
+                            class="text-xl font-zilla font-bold text-textobase mb-3"
+                            data-i18n="about_card3_title"
+                        >
+                            Capacitación Técnica y Desarrollo de Talento
+                        </h3>
+                        <p
+                            class="text-gray-600 text-sm leading-relaxed"
+                            data-i18n="about_card3_desc"
+                        >
+                            El verdadero valor de la tecnología reside en las
+                            personas que la operan. Compagino mi actividad como
+                            consultor con la formación y capacitación de
+                            profesionales técnicos y equipos corporativos.
+                            Diseño programas de estudio optimizados de alto
+                            rendimiento orientados a la obtención de
+                            certificaciones clave en el sector (PMP®, CAPM®,
+                            ITIL®). Mi enfoque metodológico combina la
+                            rigurosidad teórica con mi experiencia práctica
+                            diaria en proyectos reales de gran envergadura.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a
+                        href="historia-professional-dsalinas.html"
+                        class="inline-flex items-center justify-center text-corporativo font-semibold hover:text-interactivo border-b-2 border-transparent hover:border-interactivo transition-all pb-1"
+                    >
+                        <span data-i18n="about_btn"
+                            >Conoce mi trayectoria Profesional</span
+                        >
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="formacion" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2">
+                        <h2
+                            class="text-4xl font-zilla font-bold text-corporativo mb-6"
+                            data-i18n="training_title"
+                        >
+                            Formación IT y Certificaciones Oficiales para
+                            Profesionales y Empresas
+                        </h2>
+                        <p
+                            class="text-gray-600 mb-8 text-lg"
+                            data-i18n="training_desc"
+                        >
+                            Metodología práctica orientada a resultados
+                            impulsada por un enfoque real de consultoría.
+                            Preparamos a profesionales independientes y equipos
+                            corporativos para superar los exámenes de
+                            certificación en gestión IT y dirección de proyectos
+                            con mayor demanda y mejores salarios del mercado
+                            tecnológico.
+                        </p>
+
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-laptop-code text-acento"></i>
+                                <span data-i18n="feat_online"
+                                    >Capacitación online flexible</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-user-tie text-acento"></i>
+                                <span data-i18n="feat_mentor"
+                                    >Mentoring 1-on-1 y soporte corporativo
+                                    B2B</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-chart-line text-acento"></i>
+                                <span data-i18n="feat_track"
+                                    >Auditoría y seguimiento constante</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i
+                                    class="fas fa-file-signature text-acento"
+                                ></i>
+                                <span data-i18n="feat_exams"
+                                    >Simulacros de examen reales</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i
+                                    class="fas fa-calendar-check text-acento"
+                                ></i>
+                                <span data-i18n="feat_book"
+                                    >Flexibilidad horaria para particulares y
+                                    empresas</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-book-open text-acento"></i>
+                                <span data-i18n="feat_materials"
+                                    >Simuladores de examen y recursos
+                                    actualizados</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-file-pdf text-acento"></i>
+                                <span data-i18n="feat_pdf"
+                                    >Documentación y guías descargables</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center space-x-3 text-textobase"
+                            >
+                                <i class="fas fa-layer-group text-acento"></i>
+                                <span data-i18n="feat_flash"
+                                    >Flashcards con algoritmo de
+                                    repetición</span
+                                >
+                            </li>
+                        </ul>
+
+                        <a
+                            href="formacion.html"
+                            class="inline-block bg-interactivo hover:bg-corporativo text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md text-lg"
+                        >
+                            <span data-i18n="training_btn"
+                                >Explora la Oferta Formativa Completa</span
+                            >
+                        </a>
+                    </div>
+
+                    <div class="w-full lg:w-1/2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    PMP®
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    Project Management Professional
+                                </p>
+                            </div>
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    CAPM®
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    Certified Associate in PM
+                                </p>
+                            </div>
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    ITIL® v4
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    IT Service Management Core
+                                </p>
+                            </div>
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    ISO 27001
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    Seguridad de la Información
+                                </p>
+                            </div>
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    ISO 9001
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    Gestión de la Calidad
+                                </p>
+                            </div>
+                            <div
+                                class="bg-fondoclaro border border-blue-100 p-6 rounded-xl text-center shadow-sm"
+                            >
+                                <h3
+                                    class="font-zilla font-bold text-2xl text-corporativo mb-1"
+                                >
+                                    ISO 10001
+                                </h3>
+                                <p
+                                    class="text-xs text-gray-500 uppercase tracking-wide"
+                                >
+                                    Satisfacción del Cliente
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--mantenimiento  <section
+            id="contenido"
+            class="bg-fondoclaro py-20 border-t border-gray-200"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2
+                            class="text-4xl font-zilla font-bold text-corporativo mb-2"
+                            data-i18n="blog_title"
+                        >
+                            Recursos de Consultoría IT, Innovación Tecnológica y
+                            Gestión de Proyectos
+                        </h2>
+                        <p class="text-gray-600" data-i18n="blog_subtitle">
+                            Contenido y tendencias sobre Big Data,
+                            IoT,Transformacion digital estrategia corporativa y
+                            claves para superar tus certificaciones oficiales.
+                        </p>
+                    </div>
+                    <a
+                        href="#"
+                        class="hidden sm:flex text-interactivo hover:text-corporativo font-semibold items-center"
+                    >
+                        <span data-i18n="blog_view_all"
+                            >Ver todos los recursos</span
+                        >
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                    >
+                        <div class="h-48 bg-gray-200 w-full relative">
+                            <div
+                                class="absolute top-4 left-4 bg-acento text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                IT Management
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-gray-400 text-4xl"
+                            >
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm text-gray-400 block mb-2"
+                                >12 de Mayo, 2026</span
+                            >
+                            <h3
+                                class="text-xl font-zilla font-bold text-textobase mb-3 hover:text-interactivo cursor-pointer"
+                            >
+                                Cómo preparar tu infraestructura IT para la
+                                auditoría ISO 27001
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                                Descubre los hitos estructurales clave para
+                                afrontar la certificación de seguridad
+                                corporativa de la información con total garantía
+                                y control de riesgos.
+                            </p>
+                            <a
+                                href="#"
+                                class="text-interactivo font-medium text-sm hover:underline"
+                                data-i18n="blog_read_more"
+                                >Leer artículo completo</a
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                    >
+                        <div class="h-48 bg-gray-200 w-full relative">
+                            <div
+                                class="absolute top-4 left-4 bg-corporativo text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                Project Management
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-gray-400 text-4xl"
+                            >
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm text-gray-400 block mb-2"
+                                >05 de Mayo, 2026</span
+                            >
+                            <h3
+                                class="text-xl font-zilla font-bold text-textobase mb-3 hover:text-interactivo cursor-pointer"
+                            >
+                                PMP vs CAPM: ¿Qué certificación oficial del PMI
+                                se adapta a tu perfil?
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                                Desglosamos los requisitos técnicos, costes y el
+                                retorno de inversión estratégica que aporta cada
+                                titulación a los gestores IT.
+                            </p>
+                            <a
+                                href="#"
+                                class="text-interactivo font-medium text-sm hover:underline"
+                                data-i18n="blog_watch_video"
+                                >Ver vídeo completo</a
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow md:hidden lg:block"
+                    >
+                        <div class="h-48 bg-gray-200 w-full relative">
+                            <div
+                                class="absolute top-4 left-4 bg-acento text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+                            >
+                                ITIL v4
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-gray-400 text-4xl"
+                            >
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm text-gray-400 block mb-2"
+                                >28 de Abril, 2026</span
+                            >
+                            <h3
+                                class="text-xl font-zilla font-bold text-textobase mb-3 hover:text-interactivo cursor-pointer"
+                            >
+                                Principios guía de ITIL 4 aplicados a la gestión
+                                de Help Desk corporativos
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                                Optimiza el soporte de nivel técnico mediante la
+                                aplicación práctica de los marcos de referencia
+                                líderes mundiales en entrega de valor y
+                                servicios IT.
+                            </p>
+                            <a
+                                href="#"
+                                class="text-interactivo font-medium text-sm hover:underline"
+                                data-i18n="blog_read_more"
+                                >Leer artículo completo</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section> mantenimiento -->
+
+        <!--  <section class="bg-corporativo py-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 opacity-10">
+                <img
+                    src="assets/isotipo_oficial.png"
+                    alt="D Salinas - Consultoría Corporativa"
+                    class="w-96 h-96 object-cover"
+                />
+            </div>
+
+            <div
+                class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+            >
+                <i
+                    class="fas fa-envelope-open-text text-acento text-4xl mb-4"
+                ></i>
+                <h2
+                    class="text-3xl font-zilla font-bold text-white mb-4"
+                    data-i18n="news_title"
+                >
+                    Impulsa tu Estrategia IT y tu Carrera Tecnológica
+                </h2>
+                <p
+                    class="text-blue-100 mb-8 max-w-2xl mx-auto"
+                    data-i18n="news_desc"
+                >
+                    Únete a una comunidad de líderes y profesionales del sector
+                    tecnológico. Recibe estrategias reales sobre Transformación
+                    Digital, Big Data, IoT y claves prácticas para acelerar tu
+                    preparación en certificaciones oficiales.
+                </p>
+
+                <form
+                    class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+                    onsubmit="
+                        event.preventDefault();
+                        alert('Suscripción completada.');
+                    "
+                >
+                    <input
+                        type="email"
+                        placeholder="Tu mejor correo electrónico"
+                        required
+                        class="flex-grow px-5 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-acento text-textobase w-full"
+                    />
+                    <button
+                        type="submit"
+                        class="bg-acento hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap shadow-lg"
+                        data-i18n="news_btn"
+                    >
+                        Recibir Recursos
+                    </button>
+                </form>
+                <p class="text-xs text-blue-200 mt-4" data-i18n="news_spam">
+                    Contenido técnico premium. Cero spam. Baja con un clic.
+                </p>
+            </div>
+            </section> -->
+
+        <section id="contacto" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-4xl font-zilla font-bold text-corporativo mb-2"
+                        data-i18n="contact_title"
+                    >
+                        ¿Listo para el siguiente nivel?
+                    </h2>
+                </div>
+
+                <div class="flex justify-center">
+                    <div
+                        class="w-full max-w-3xl bg-white rounded-2xl shadow-xl border border-gray-100 p-8"
+                    >
+                        <form
+                            onsubmit="
+                                event.preventDefault();
+                                alert('Mensaje enviado de forma simulada.');
+                            "
+                        >
+                            <div class="mb-8">
+                                <p
+                                    class="text-sm font-bold text-textobase mb-3"
+                                    data-i18n="form_need"
+                                >
+                                    ¿En qué área necesitas una solución? *
+                                </p>
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-2 gap-4"
+                                >
+                                    <div class="relative">
+                                        <input
+                                            type="radio"
+                                            name="servicio"
+                                            id="serv_consultoria"
+                                            value="consultoria"
+                                            class="peer sr-only"
+                                            required
+                                        />
+                                        <label
+                                            for="serv_consultoria"
+                                            class="block w-full text-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer transition-all hover:border-interactivo text-gray-600"
+                                        >
+                                            <i
+                                                class="fas fa-briefcase block text-2xl mb-2"
+                                            ></i>
+                                            <span
+                                                data-i18n="form_opt_consulting"
+                                                >Consultoría IT y Gestión
+                                                Estratégica</span
+                                            >
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input
+                                            type="radio"
+                                            name="servicio"
+                                            id="serv_formacion"
+                                            value="formacion"
+                                            class="peer sr-only"
+                                        />
+                                        <label
+                                            for="serv_formacion"
+                                            class="block w-full text-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer transition-all hover:border-interactivo text-gray-600"
+                                        >
+                                            <i
+                                                class="fas fa-graduation-cap block text-2xl mb-2"
+                                            ></i>
+                                            <span data-i18n="form_opt_training"
+                                                >Formación y Certificación
+                                                Profesional</span
+                                            >
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
+                            >
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        data-i18n="form_name"
+                                        >Nombre *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        data-i18n="form_lastname"
+                                        >Apellido *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        data-i18n="form_email"
+                                        >Email *</label
+                                    >
+                                    <input
+                                        type="email"
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        data-i18n="form_phone"
+                                        >Teléfono de contacto</label
+                                    >
+                                    <input
+                                        type="tel"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label
+                                    class="block text-sm font-medium text-gray-700 mb-1"
+                                    data-i18n="form_message"
+                                    >Cuéntame brevemente tus objetivos o
+                                    necesidades *</label
+                                >
+                                <textarea
+                                    rows="4"
+                                    required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-interactivo focus:border-interactivo outline-none transition-shadow"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full bg-corporativo hover:bg-interactivo text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md"
+                                data-i18n="form_submit"
+                            >
+                                Enviar
+                            </button>
+                        </form>
+
+                        <div
+                            class="mt-8 pt-8 border-t border-gray-100 flex flex-wrap justify-center gap-6"
+                        >
+                            <a
+                                href="https://www.youtube.com/@dsalinas7"
+                                target="_blank"
+                                class="flex items-center text-gray-500 hover:text-red-600 transition-colors group"
+                            >
+                                <i
+                                    class="fab fa-youtube text-2xl mr-2 group-hover:scale-110 transition-transform"
+                                ></i>
+                                <span class="font-medium">dsalinas</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/dsalinasp/"
+                                target="_blank"
+                                class="flex items-center text-gray-500 hover:text-blue-700 transition-colors group"
+                            >
+                                <i
+                                    class="fab fa-linkedin text-2xl mr-2 group-hover:scale-110 transition-transform"
+                                ></i>
+                                <span class="font-medium">dsalinas</span>
+                            </a>
+                            <a
+                                href="https://www.tiktok.com/@dsalinas__"
+                                target="_blank"
+                                class="flex items-center text-gray-500 hover:text-black transition-colors group"
+                            >
+                                <i
+                                    class="fab fa-tiktok text-2xl mr-2 group-hover:scale-110 transition-transform"
+                                ></i>
+                                <span class="font-medium">dsalinas</span>
+                            </a>
+                            <a
+                                href="https://www.instagram.com/dsalinas___/"
+                                target="_blank"
+                                class="flex items-center text-gray-500 hover:text-pink-600 transition-colors group"
+                            >
+                                <i
+                                    class="fab fa-instagram text-2xl mr-2 group-hover:scale-110 transition-transform"
+                                ></i>
+                                <span class="font-medium">dsalinas</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-gray-50 border-t border-gray-200 py-8">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+            >
+                <div class="flex items-center space-x-2">
+                    <img
+                        src="assets/isotipo_oficial.png"
+                        alt="D Salinas IT Specialist"
+                        class="h-6 w-auto grayscale opacity-60"
+                    />
+                    <span class="text-sm text-gray-500"
+                        >© 2026 D Salinas.
+                        <span data-i18n="footer_rights"
+                            >Todos los derechos reservados.</span
+                        ></span
+                    >
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a
+                        href="politica-de-privacidad.html"
+                        class="hover:text-white transition"
+                        >Política de Privacidad</a
+                    >
+                    <a
+                        href="terminos-y-condiciones.html"
+                        class="hover:text-white transition"
+                        >Términos y Condiciones</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+            });
+
+            document.querySelectorAll("#mobile-menu a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                });
+            });
+
+            // Diccionario Optimizado con Copywriting de Autoridad y Keywords estratégicas (ES/EN)
+            const dictionary = {
+                es: {
+                    nav_about: "Sobre mí",
+                    nav_training: "Fórmate conmigo",
+                    nav_content: "Contenido",
+                    nav_contact: "Contáctame",
+
+                    hero_tag:
+                        "Consultoría IT & Formación Técnica Especializada",
+                    hero_title_1: "Transformación Digital,",
+                    hero_title_2: "Consultoría IT y",
+                    hero_title_3: "Alto Rendimiento",
+                    hero_desc:
+                        "Optimizo y estandarizo la <strong>infraestructura IT</strong> corporativa para maximizar la eficiencia operativa. Al mismo tiempo, capacito a tus equipos técnicos mediante <strong>formación especializada para certificaciones clave (PMP®, CAPM®, ITIL®)</strong>. Conecta estrategia y talento en un solo lugar.",
+                    hero_btn_hire: "Consultoría y Gestión IT | HABLEMOS",
+                    hero_btn_train: "Certifica a tu Equipo Técnico",
+
+                    about_title:
+                        "Sobre mí: Consultoría IT y Liderazgo Tecnológico",
+                    about_card1_title:
+                        "Ingeniería Informática e Infraestructura IT",
+                    about_card1_desc:
+                        "Experiencia técnica profunda en administración de sistemas, redes y soporte IT corporativo. El cimiento analítico indispensable que estabiliza tu infraestructura tecnológica.",
+                    about_card2_title:
+                        "Consultoría Tecnológica B2B y Gestión IT",
+                    about_card2_desc:
+                        "Capacidad para alinear la tecnología con los objetivos estratégicos de tu negocio. Lidero proyectos IT complejos, reduciendo costes y optimizando procesos internos.",
+                    about_card3_title: "Formación PMP® y Desarrollo de Equipos",
+                    about_card3_desc:
+                        "Transferencia de conocimiento metodológico. Capacito y formo a tus mandos técnicos intermedios para convertirlos en líderes autónomos de proyectos de alto rendimiento.",
+                    about_btn: "Conoce mi trayectoria como IT Manager",
+
+                    training_title:
+                        "Formación IT y Certificaciones para Equipos Técnicos",
+                    training_desc:
+                        "Metodología corporativa enfocada a resultados reales. Preparo a tu talento humano para superar con éxito las certificaciones en gestión IT y dirección de proyectos más valoradas del sector tecnológico.",
+                    feat_online: "Capacitación online flexible",
+                    feat_mentor: "Mentoría personalizada B2B",
+                    feat_track: "Auditoría y seguimiento constante",
+                    feat_exams: "Simulacros de examen reales",
+                    feat_book: "Planificación adaptada a empresas",
+                    feat_materials: "Recursos exclusivos PMBOK® e ITIL®",
+                    feat_pdf: "Documentación y guías descargables",
+                    feat_flash: "Flashcards con algoritmo de repetición",
+                    training_btn: "Ver planes de capacitación técnica",
+
+                    blog_title:
+                        "Artículos de Consultoría IT y Gestión de Proyectos",
+                    blog_subtitle:
+                        "Análisis estratégicos sobre infraestructura IT, gestión del cambio y metodologías de examen.",
+                    blog_view_all: "Ver todos los recursos",
+                    blog_read_more: "Leer artículo completo",
+                    blog_watch_video: "Ver vídeo completo",
+
+                    news_title:
+                        "Estrategias de Gestión IT y Dirección de Proyectos en tu bandeja",
+                    news_desc:
+                        "Únete a directores técnicos y gestores tecnológicos. Recibe periódicamente píldoras de valor sobre estandarización de procesos, frameworks ágiles y preparación avanzada de certificaciones oficiales.",
+                    news_btn: "Suscribirse",
+                    news_spam:
+                        "Contenido técnico premium. Cero spam. Baja con un clic.",
+
+                    contact_title:
+                        "Inicia un Proyecto de Consultoría IT o Capacitación",
+                    contact_desc:
+                        "Hablemos sobre cómo estandarizar la infraestructura de tu organización o certificar a tu equipo bajo estándares internacionales.",
+
+                    form_need: "¿Qué solución corporativa requieres? *",
+                    form_opt_consulting:
+                        "Consultoría IT y Gestión de Infraestructuras",
+                    form_opt_training: "Formación PMP® e ITIL® para Equipos",
+                    form_name: "Nombre *",
+                    form_lastname: "Apellido *",
+                    form_email: "Email Corporativo *",
+                    form_phone: "Teléfono de contacto",
+                    form_message: "Detalla los requerimientos de tu empresa *",
+                    form_submit: "Agendar Reunión Técnica",
+
+                    footer_rights: "Todos los derechos reservados.",
+                },
+                en: {
+                    nav_about: "About Me",
+                    nav_training: "Train with Me",
+                    nav_content: "Content",
+                    nav_contact: "Contact Me",
+
+                    hero_tag: "IT Consulting & Specialized Technical Training",
+                    hero_title_1: "Digital Transformation,",
+                    hero_title_2: "IT Consulting &",
+                    hero_title_3: "High Performance",
+                    hero_desc:
+                        "I optimize and standardize corporate <strong>IT infrastructure</strong> to maximize operational efficiency. Concurrently, I empower your technical staff through <strong>advanced training for key certifications (PMP®, CAPM®, ITIL®)</strong>. Align strategy and talent seamlessly.",
+                    hero_btn_hire: "IT Consulting & Solutions | LET'S TALK",
+                    hero_btn_train: "Certify Your Technical Team",
+
+                    about_title: "About Me: IT Consulting & Tech Leadership",
+                    about_card1_title:
+                        "Computer Engineering & IT Infrastructure",
+                    about_card1_desc:
+                        "Deep hands-on expertise in systems administration, corporate networks, and IT infrastructure. The structural cornerstone needed to secure enterprise performance.",
+                    about_card2_title: "B2B Tech Consulting & IT Management",
+                    about_card2_desc:
+                        "Aligning cutting-edge technology with core business goals. I scale complex IT projects, reducing deployment friction and driving business value.",
+                    about_card3_title: "PMP® Training & High-Performance Teams",
+                    about_card3_desc:
+                        "Methodological knowledge transfer. I train, mentor, and upscale your internal technical staff into autonomous and certified modern project leaders.",
+                    about_btn: "Discover my track record as an IT Manager",
+
+                    training_title:
+                        "IT Training & Certifications for Enterprise Teams",
+                    training_desc:
+                        "Result-driven enterprise framework. I prepare your tech teams to master and pass the most demanding IT Service Management and Project Management certifications globally.",
+                    feat_online: "Flexible online training schedules",
+                    feat_mentor: "B2B custom roadmap mentoring",
+                    feat_track: "Continuous audits & expert tracking",
+                    feat_exams: "Real-world exam simulators",
+                    feat_book: "Corporate-tailored planning",
+                    feat_materials: "Exclusive PMBOK® & ITIL® materials",
+                    feat_pdf: "Downloadable blueprints & guides",
+                    feat_flash: "Spaced-repetition review flashcards",
+                    training_btn: "Browse enterprise training plans",
+
+                    blog_title: "IT Consulting & Project Management Insights",
+                    blog_subtitle:
+                        "Strategic deep dives into IT service governance, change management, and exam blueprints.",
+                    blog_view_all: "View all technical resources",
+                    blog_read_more: "Read full article",
+                    blog_watch_video: "Watch full video",
+
+                    news_title:
+                        "IT Management & Project Governance directly to your inbox",
+                    news_desc:
+                        "Join top-tier technology managers and CTOs. Get practical blueprints on process standardization, agile frameworks, and certification tracking.",
+                    news_btn: "Subscribe Now",
+                    news_spam:
+                        "Premium tech value. Zero spam. Unsubscribe anytime.",
+
+                    contact_title:
+                        "Launch your next IT Project or Team Training",
+                    contact_desc:
+                        "Let's schedule a deep dive to standardize your infrastructure or empower your staff under elite global methodologies.",
+
+                    form_need: "Which corporate solution do you require? *",
+                    form_opt_consulting:
+                        "IT Consulting & Infrastructure Management",
+                    form_opt_training: "PMP® & ITIL® Team Training Services",
+                    form_name: "First Name *",
+                    form_lastname: "Last Name *",
+                    form_email: "Corporate Email *",
+                    form_phone: "Contact Phone Number",
+                    form_message:
+                        "Detail your company's high-level requirements *",
+                    form_submit: "Schedule Technical Meeting",
+
+                    footer_rights: "All rights reserved.",
+                },
+            };
+
+            function changeLanguage(lang) {
+                document.querySelectorAll("[data-i18n]").forEach((element) => {
+                    const key = element.getAttribute("data-i18n");
+                    if (dictionary[lang][key]) {
+                        element.innerHTML = dictionary[lang][key];
+                    }
+                });
+
+                const btnEs = document.getElementById("btn-es");
+                const btnEn = document.getElementById("btn-en");
+                const btnEsMob = document.getElementById("btn-es-mob");
+                const btnEnMob = document.getElementById("btn-en-mob");
+
+                if (lang === "es") {
+                    btnEs.className =
+                        "text-sm font-bold text-corporativo focus:outline-none";
+                    btnEn.className =
+                        "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+                    btnEsMob.className =
+                        "text-xs font-bold text-corporativo focus:outline-none";
+                    btnEnMob.className =
+                        "text-xs font-normal text-gray-500 focus:outline-none";
+                } else {
+                    btnEn.className =
+                        "text-sm font-bold text-corporativo focus:outline-none";
+                    btnEs.className =
+                        "text-sm font-normal text-gray-500 hover:text-interactivo focus:outline-none";
+                    btnEnMob.className =
+                        "text-xs font-bold text-corporativo focus:outline-none";
+                    btnEsMob.className =
+                        "text-xs font-normal text-gray-500 focus:outline-none";
+                }
+            }
+        </script>
+    </body>
+</html>
